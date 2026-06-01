@@ -70,7 +70,7 @@ function finaram_mortgage_approval_estimator_enqueue_assets()
         array(
             'baseScore'      => 50,
             'minScore'       => 0,
-            'maxScore'       => 95,
+            'maxScore'       => 97,
             'labelApproval'  => __('Approval probability', 'finanzia'),
             'labelFinal'     => __('Your estimated approval probability', 'finanzia'),
             'ctaText'        => __('Get Mortgage Consultation', 'finanzia'),

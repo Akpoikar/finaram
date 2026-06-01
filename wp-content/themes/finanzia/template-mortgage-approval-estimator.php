@@ -10,8 +10,25 @@
 
 defined('ABSPATH') || exit;
 
-$fields = get_fields();
-$args   = array();
+if (! function_exists('finaram_render_mortgage_approval_estimator')) {
+    status_header(500);
+    nocache_headers();
+    wp_die(
+        esc_html__(
+            'Mortgage estimator is not installed correctly. Upload libs/mortgage-approval-estimator.php and ensure functions.php includes it, then clear cache.',
+            'finanzia'
+        ),
+        esc_html__('Estimator setup required', 'finanzia'),
+        array('response' => 500)
+    );
+}
+
+$fields = function_exists('get_fields') ? get_fields() : array();
+if (! is_array($fields)) {
+    $fields = array();
+}
+
+$args = array();
 
 if (! empty($fields['mae_title'])) {
     $args['title'] = $fields['mae_title'];
