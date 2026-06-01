@@ -1,0 +1,396 @@
+/**
+ * Mortgage Approval Estimator (mae) — scoped component styles.
+ * Finaram brand: #dd6b3a accent, #101010 text, #f1efe8 surfaces.
+ */
+
+/* Embed page shell (template-mortgage-approval-estimator.php) */
+.mae-embed-page {
+  margin: 0;
+  padding: 0;
+  background: #f1efe8;
+  font-family: "Inter Tight", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #101010;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mae-embed-page__main {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.mae-embed-page .mae {
+  flex: 1;
+}
+
+/* Component root */
+.mae {
+  --mae-accent: #dd6b3a;
+  --mae-accent-hover: #c45e32;
+  --mae-text: #101010;
+  --mae-text-muted: #5a5a5a;
+  --mae-surface: #f1efe8;
+  --mae-card-bg: #fff;
+  --mae-card-border: #e8e4dc;
+  --mae-radius: 16px;
+  --mae-radius-sm: 12px;
+  --mae-shadow: 0 4px 24px rgba(16, 16, 16, 0.06);
+  --mae-gauge-size: 220px;
+  --mae-transition: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--mae-surface);
+  font-family: "Inter Tight", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--mae-text);
+  line-height: 1.5;
+}
+
+.mae *,
+.mae *::before,
+.mae *::after {
+  box-sizing: border-box;
+}
+
+.mae__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+@media (min-width: 768px) {
+  .mae__inner {
+    padding: 56px 40px 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mae__inner {
+    padding: 72px 48px 96px;
+  }
+}
+
+/* Two-column layout (desktop) */
+.mae__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .mae__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  .mae__main {
+    flex: 1;
+    min-width: 0;
+    max-width: 640px;
+  }
+
+  .mae__aside {
+    flex: 0 0 auto;
+    width: var(--mae-gauge-size);
+    position: sticky;
+    top: 48px;
+  }
+}
+
+/* Typography */
+.mae__title {
+  margin: 0 0 16px;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.mae__description {
+  margin: 0 0 28px;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--mae-text-muted);
+  max-width: 52ch;
+}
+
+@media (min-width: 1024px) {
+  .mae__description {
+    margin-bottom: 40px;
+  }
+}
+
+/* Gauge visibility: mobile between header & questions; desktop in sidebar */
+.mae__gauge--mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.mae__gauge--desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .mae__gauge--mobile {
+    display: none;
+  }
+
+  .mae__gauge--desktop {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.mae__gauge-wrap {
+  position: relative;
+  width: var(--mae-gauge-size);
+  height: var(--mae-gauge-size);
+}
+
+.mae__gauge-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mae__gauge-track {
+  stroke: #e8e4dc;
+}
+
+.mae__gauge-fill {
+  stroke: var(--mae-accent);
+  stroke-dasharray: 553;
+  stroke-dashoffset: 553;
+  transition: stroke-dashoffset var(--mae-transition);
+}
+
+.mae__gauge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.mae__gauge-value {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.mae__gauge-percent {
+  font-weight: 600;
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+
+.mae__gauge-label {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--mae-text-muted);
+  max-width: 140px;
+  line-height: 1.3;
+}
+
+.mae__gauge.is-updating .mae__gauge-value {
+  opacity: 0.6;
+}
+
+/* Step progress bar */
+.mae__progress {
+  height: 4px;
+  background: #e8e4dc;
+  border-radius: 4px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.mae__progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--mae-accent);
+  border-radius: 4px;
+  transition: width 0.35s ease;
+}
+
+/* Question steps */
+.mae__step {
+  animation: mae-fade-in 0.35s ease;
+}
+
+.mae__step[hidden] {
+  display: none !important;
+}
+
+@keyframes mae-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mae__step-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mae-accent);
+}
+
+.mae__step-question {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .mae__step-question {
+    font-size: 1.375rem;
+    margin-bottom: 24px;
+  }
+}
+
+.mae__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+}
+
+.mae__option {
+  margin: 0;
+  padding: 0;
+}
+
+.mae__option-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 18px 20px;
+  border: 1px solid var(--mae-card-border);
+  border-radius: var(--mae-radius-sm);
+  background: var(--mae-card-bg);
+  color: var(--mae-text);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+  box-shadow: var(--mae-shadow);
+}
+
+.mae__option-btn:hover {
+  border-color: var(--mae-accent);
+  background: #fffaf7;
+}
+
+.mae__option-btn:focus-visible {
+  outline: 2px solid var(--mae-accent);
+  outline-offset: 2px;
+}
+
+.mae__option-btn:active {
+  transform: scale(0.99);
+}
+
+.mae__option-btn.is-selected {
+  border-color: var(--mae-accent);
+  background: #fff5ef;
+  box-shadow: 0 0 0 1px var(--mae-accent);
+}
+
+/* Final step */
+.mae__final {
+  text-align: center;
+  padding: 24px 0 8px;
+  animation: mae-fade-in 0.4s ease;
+}
+
+.mae__final[hidden] {
+  display: none !important;
+}
+
+.mae__final-label {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--mae-text-muted);
+}
+
+.mae__final-score {
+  margin: 0 0 28px;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--mae-accent);
+  letter-spacing: -0.03em;
+}
+
+/* CTA — hook-friendly classes for popup / CF7 later */
+.mae__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 32px;
+  border: 1px solid var(--mae-accent);
+  border-radius: var(--mae-radius);
+  background: var(--mae-accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.mae__cta:hover {
+  background: var(--mae-accent-hover);
+  border-color: var(--mae-accent-hover);
+  color: #fff;
+}
+
+.mae__cta:focus-visible {
+  outline: 2px solid var(--mae-text);
+  outline-offset: 3px;
+}
+
+/* Homepage: replace hero — full-width section inside existing wrapper */
+.top-section.mae-hero-replacement {
+  display: block;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  background: var(--mae-surface, #f1efe8);
+}
+
+.top-section.mae-hero-replacement .mae__inner {
+  max-width: 1600px;
+}

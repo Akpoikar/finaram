@@ -17,6 +17,9 @@ require_once __DIR__ . '/libs/phpThumb/phpthumb.class.php';
 // Settings for theme
 require_once __DIR__ . '/libs/settings.php';
 
+// Mortgage approval estimator widget
+require_once __DIR__ . '/libs/mortgage-approval-estimator.php';
+
 // Post types
 require_once __DIR__ . '/libs/calcpage.php';
 require_once __DIR__ . '/libs/articles.php';
