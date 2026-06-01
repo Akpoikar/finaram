@@ -417,16 +417,3 @@
   outline: 2px solid var(--mae-text);
   outline-offset: 3px;
 }
-
-/* Homepage: replace hero — full-width section inside existing wrapper */
-.top-section.mae-hero-replacement {
-  display: block;
-  max-width: none;
-  padding: 0;
-  margin: 0;
-  background: var(--mae-surface, #f1efe8);
-}
-
-.top-section.mae-hero-replacement .mae__inner {
-  max-width: 1600px;
-}

@@ -18,10 +18,6 @@ function finaram_should_load_mortgage_approval_estimator()
         return true;
     }
 
-    if (is_front_page()) {
-        return true;
-    }
-
     global $post;
     if ($post instanceof WP_Post && has_shortcode($post->post_content, 'mortgage_approval_estimator')) {
         return true;
