@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: n/a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: n/a\n"
+"PO-Revision-Date: 2024-02-05 06:21+0000\n"
+"Last-Translator: Matthias Günter <matthias.guenter@devowl.io>\n"
+"Language-Team: Czech <https://translate.devowl.io/projects/devowl-wp-utils-"
+"backend-php/develop/cs/>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.3.1\n"
+
+#. translators:
+#: Localization.php:455
+#, php-format
+msgid ""
+"Some language packs could not be downloaded for the textdomain %1$s (Error: "
+"%2$s, Endpoint: %3$s)."
+msgstr ""
+"Pro textovou doménu %1$s nebylo možné stáhnout některé jazykové balíčky "
+"(Chyba: %2$s, Koncový bod: %3$s)."
+
+#: Localization.php:506
+msgid "Retry"
+msgstr "Opakovat pokus"
+
+#: RateLimitNotice.php:62
+msgid " and "
+msgstr " a "
+
+#. translators:
+#: RateLimitNotice.php:71
+#, php-format
+msgid ""
+"Your WordPress unexpectedly requests the license server and cloud services "
+"of <strong>%1$s</strong> exceptionally often (URL: <code>%3$s</code>). This "
+"indicates a misconfiguration of your WordPress system, which can also affect "
+"the loading speed of your website or cause malfunctions. Please check with "
+"your technical contact what is configured incorrectly! Alternatively, you "
+"can <a href=\"%2$s\" target=\"_blank\">open a support ticket</a> at the "
+"plugin manufacturer support."
+msgstr ""
+"Váš WordPress nečekaně často požaduje licenční server a cloudové služby "
+"<strong>%1$s</strong> (URL: <code>%3$s</code> ). To naznačuje chybnou "
+"konfiguraci systému WordPress, která může mít vliv i na rychlost načítání "
+"vašich webových stránek nebo může způsobovat poruchy. Zkontrolujte prosím u "
+"svého technického kontaktu, co je špatně nakonfigurováno! Případně můžete na "
+"adrese <a href=\"%2$s\" target=\"_blank\">otevřít ticket podpory</a> u "
+"podpory výrobce pluginu."
+
+#: RateLimitNotice.php:86
+msgid ""
+"I have solved the problem (hide the message until the next occurrence of the "
+"error)"
+msgstr "Problém jsem vyřešil (skrýt zprávu až do dalšího výskytu chyby)"
+
+#. translators:
+#: Service.php:121
+#, php-format
+msgid ""
+"<strong>An unexpected network error has occurred!</strong> One or more "
+"WordPress plugins tried to call the WordPress REST API, which failed. Most "
+"likely a <strong>security plugin%s</strong>, a web <strong>server "
+"configuration</strong> or active <strong>ad-blocker extension</strong> "
+"installed on your browser disabled the REST API. Please make sure that the "
+"following REST API namespaces are reachable to use your plugin without "
+"problems:"
+msgstr ""
+"<strong>Objevila se nečekaná chyba!</strong> Jeden nebo více pluginů "
+"WordPress se pokusilo zavolat rozhraní WordPress REST API, což se "
+"nepodařilo. S největší pravděpodobností <strong>bezpečnostní plugin%s</"
+"strong>, web <strong>konfigurace serveru</strong> nebo aktivní "
+"<strong>rozšíření blokátoru reklam</strong> nainstalované v prohlížeči "
+"zakázalo rozhraní REST API. Ujistěte se, že jsou následující jmenné prostory "
+"rozhraní REST API dosažitelné, abyste mohli plugin bez problémů používat:"
+
+#. translators:
+#: Service.php:131
+#, php-format
+msgid ""
+"What is the WordPress REST API and how to enable it? %1$sLearn more%2$s."
+msgstr ""
+"Co je to rozhraní WordPress REST API a jak ho povolit? %1$sZjistit více%2$s."
+
+#: Service.php:137
+msgid "https://devowl.io/knowledge-base/wordpress-rest-api-does-not-respond/"
+msgstr "https://devowl.io/knowledge-base/wordpress-rest-api-does-not-respond/"
+
+#: Service.php:146
+msgid ""
+"In the text box below you will find a technical listing of the last 10 "
+"failed network requests:"
+msgstr ""
+"V níže uvedeném textovém poli naleznete technický výpis posledních 10 "
+"neúspěšných síťových požadavků:"
+
+#~ msgid "https://devowl.io/support/"
+#~ msgstr "https://devowl.io/support/"

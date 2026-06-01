@@ -1,0 +1,18 @@
+/*
+* Theme Name: finanzia
+* Author: a.gorban
+* Text Domain: finanzia
+* Domain Path: /languages
+*/
+
+.otgs-development-site-front-end {
+    display: none;
+}
+figure {
+	margin: 1rem 0 !important;
+}
+@media (max-width: 767px) {
+	.wp-block-table .has-fixed-layout {
+		width: 770px;
+	}
+}

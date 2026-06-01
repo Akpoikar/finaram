@@ -1,0 +1,22 @@
+# WordPress — secrets & generated
+wp-config.php
+.htaccess
+
+# User uploads & cache (restore on server / via deploy)
+wp-content/uploads/
+wp-content/cache/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Local / server
+.ftpquota
+*.sql
+*.zip
+
+# Stash folder (local only, if used)
+.estimator-stash/

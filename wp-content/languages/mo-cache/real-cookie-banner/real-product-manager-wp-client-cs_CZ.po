@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: n/a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: n/a\n"
+"PO-Revision-Date: 2023-11-06 10:19+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Czech <https://translate.devowl.io/projects/devowl-wp-real-"
+"product-manager-wp-client-backend-php/develop/cs/>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.1.1\n"
+
+#: AbstractInitiator.php:205
+msgid "https://devowl.io/account"
+msgstr "https://devowl.io/account"
+
+#: AbstractInitiator.php:210
+msgid ""
+"https://devowl.io/knowledge-base/devowl-where-can-i-find-my-license-key/"
+msgstr ""
+"https://devowl.io/knowledge-base/devowl-where-can-i-find-my-license-key/"
+
+#: client/ClientUtils.php:64
+msgid ""
+"Something went wrong while parsing an error message from the remote server."
+msgstr "Něco se pokazilo při analýze hlášení o chybě ze vzdáleného serveru."
+
+#. translators:
+#: license/License.php:197
+#, php-format
+msgid ""
+"The plugin has a new update server. Therefore, you need to reactivate your "
+"license (%s) to continue receiving updates."
+msgstr ""
+"Plugin má nový aktualizační server. Proto musíte znovu aktivovat svou "
+"licenci (%s), abyste mohli nadále dostávat aktualizace."
+
+#: license/License.php:205
+msgid ""
+"You are using a WordPress multisite. According to the plugin's licence "
+"agreement, you need one license per website. If you have only used one "
+"licence for all websites in your WordPress multisite, this was only possible "
+"because it was not technically prevented. We ask for your understanding if "
+"this causes you any inconvenience!"
+msgstr ""
+"Používáte multisite WordPress. Podle licenčního prohlášení pluginu "
+"potřebujete jednu licenci na jednu webovou stránku. Pokud jste použili pouze "
+"jednu licenci pro všechny weby ve svém multisite WordPress, bylo to možné "
+"pouze proto, že tomu nebylo technicky zabráněno. Prosíme o pochopení, pokud "
+"vám to způsobí nějaké nepříjemnosti!"
+
+#: license/License.php:223 license/License.php:261
+msgid "You have not yet activated a license for this plugin on your website."
+msgstr ""
+"Na svých webových stránkách jste ještě neaktivovali licenci tohoto pluginu."
+
+#: license/License.php:326
+msgid ""
+"The license has been automatically deactivated because your website is "
+"running on a new domain. Please activate the license again!"
+msgstr ""
+"Licence byla automaticky deaktivována, protože vaše webové stránky běží na "
+"nové doméně. Prosím, aktivujte licenci znovu!"
+
+#: license/License.php:332
+msgid "License key"
+msgstr "Licenční klíče"
+
+#: license/License.php:397
+msgid "No programmatic activation found for this plugin."
+msgstr "Pro tento plugin nebyla nalezena žádná programová aktivace."
+
+#: license/LicenseActivation.php:85
+msgid ""
+"You have already activated a license for this plugin. Please deactivate it "
+"first!"
+msgstr ""
+"Již jste aktivovali licenci tohoto pluginu. Nejprve ji prosím deaktivujte!"
+
+#: license/PluginUpdateLicensePool.php:69
+msgid "You need to provide at least one license!"
+msgstr "Musíte předložit alespoň jednu licenci!"
+
+#: license/PluginUpdateLicensePool.php:92
+msgid ""
+"You must provide an email address and a name if you want to subscribe to the "
+"newsletter!"
+msgstr ""
+"Pokud se chcete přihlásit k odběru newsletteru, musíte uvést e-mailovou "
+"adresu a jméno!"
+
+#: license/PluginUpdateLicensePool.php:134
+msgid ""
+"You must have at least one license of a site in use within your multisite."
+msgstr ""
+"V rámci své multisite musíte mít alespoň jednu licenci webu, který používáte."
+
+#. translators:
+#: license/PluginUpdateLicensePool.php:173
+#, php-format
+msgid ""
+"The license server for checking the license cannot be reached. Please check "
+"if you are blocking access to %s e.g. by a firewall."
+msgstr ""
+"Nelze se spojit s licenčním serverem pro kontrolu licence. Zkontrolujte "
+"prosím, zda neblokujete přístup k %s např. firewallem."
+
+#: rest/PluginUpdate.php:167
+msgid "Something went wrong. Please try again later!"
+msgstr "Něco se pokazilo. Zkuste to prosím později!"
+
+#: view/AnnouncementView.php:67
+msgid "Dismiss"
+msgstr "Odmítnout"
+
+#: view/PluginUpdateView.php:115
+msgid "You have not yet entered the license key."
+msgstr "Dosud jste nezadali licenční klíč."
+
+#: view/PluginUpdateView.php:118
+msgid "Activate the license to receive automatic updates."
+msgstr "Aktivujte licenci pro příjem automatických aktualizací."
+
+#: view/PluginUpdateView.php:145
+msgid "License"
+msgstr "Licence"
+
+#. translators:
+#: view/PluginUpdateView.php:175
+#, php-format
+msgid ""
+"You have not yet activated a license for the %s plugin. Activate the licence "
+"to receive automatic updates."
+msgstr ""
+"Ještě nemáte aktivovanou licenci pro plugin %s. Aktivujte licenci, abyste "
+"mohli dostávat automatické aktualizace."
+
+#. translators:
+#: view/PluginUpdateView.php:196
+#, php-format
+msgid ""
+"Updates of %s are waiting for you when you activate your license. Activate "
+"your license in the settings now!"
+msgstr ""
+"Po aktivaci licence na vás čekají aktualizace %s. Aktivujte si licenci v "
+"nastavení nyní!"
+
+#. translators:
+#: view/PluginUpdateView.php:203
+#, php-format
+msgid "Activate your %s to use all features with great support. Activate now!"
+msgstr ""
+"Aktivujte si %s a používejte všechny funkce se skvělou podporou. Aktivujte "
+"nyní!"
+
+#. translators:
+#: view/PluginUpdateView.php:210
+#, php-format
+msgid ""
+"You have not yet activated your %s license. Activate your license now in the "
+"settings!"
+msgstr ""
+"Dosud jste neaktivovali licenci %s. Aktivujte si licenci nyní v nastavení!"
+
+#. translators:
+#: view/PluginUpdateView.php:217
+#, php-format
+msgid ""
+"You are not allowed to use %s according to our license terms unless you have "
+"purchased a license. Activate it in the settings or buy one now!"
+msgstr ""
+"Podle našich licenčních podmínek nesmíte %s používat, pokud jste si "
+"nezakoupili licenci. Aktivujte si ji v nastavení nebo si ji kupte hned!"
+
+#. translators:
+#: view/PluginUpdateView.php:225
+#, php-format
+msgid ""
+"Attention! Pirates distribute %s for free without a license. Activate your "
+"license in the settings to show that you are not a pirate!"
+msgstr ""
+"Pozor! Piráti šíří %s zdarma bez licence. Aktivujte si licenci v nastavení, "
+"abyste ukázali, že nejste pirát!"
+
+#. translators:
+#: view/PluginUpdateView.php:233
+#, php-format
+msgid ""
+"You are probably using an illegally purchased copy of %s without a license. "
+"Check your license now!"
+msgstr ""
+"Pravděpodobně používáte nelegálně zakoupenou kopii %s bez licence. "
+"Zkontrolujte si licenci!"
+
+#. translators:
+#: view/PluginUpdateView.php:241
+#, php-format
+msgid ""
+"You are probably using an illegal copy of %s. Purchase a license now or "
+"activate your license in the settings and continue using this software with "
+"a clear conscience!"
+msgstr ""
+"Pravděpodobně používáte nelegální kopii %s. Zakupte si nyní licenci nebo si "
+"ji aktivujte v nastavení a pokračujte v používání tohoto softwaru s čistým "
+"svědomím!"
+
+#: view/PluginUpdateView.php:277
+msgid "Activate now"
+msgstr "Aktivovat nyní"

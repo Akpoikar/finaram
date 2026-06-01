@@ -1,0 +1,196 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Watchdog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-26 13:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.11; wp-6.6.2\n"
+"X-Domain: watchdog"
+
+#. 1: date, 2: time
+#: class.watchdog-list.php:305
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: class.watchdog.php:383
+msgid "Add new Watchdog"
+msgstr ""
+
+#: class.watchdog.php:382
+msgid "Add Watchdog"
+msgstr ""
+
+#: class.watchdog-list.php:131
+msgid "Agreement"
+msgstr ""
+
+#: class.watchdog-list.php:169
+msgid "All"
+msgstr ""
+
+#: class.watchdog.php:386
+msgid "All Watchdogs"
+msgstr ""
+
+#: class.watchdog.php:532 class.watchdog.php:627
+msgid "American mortgage"
+msgstr ""
+
+#: class.watchdog.php:534 class.watchdog.php:668
+msgid "Auto loan"
+msgstr ""
+
+#: class.watchdog.php:535
+msgid "Credit card"
+msgstr ""
+
+#. date format, see https://www.php.net/date
+#: class.watchdog-list.php:307
+msgid "d.m.Y"
+msgstr ""
+
+#: class.watchdog-list.php:128
+msgid "Date"
+msgstr ""
+
+#: class.watchdog-list.php:243
+msgid "edit"
+msgstr ""
+
+#: class.watchdog.php:384
+msgid "Edit Watchdog"
+msgstr ""
+
+#: class.watchdog-list.php:125
+msgid "Email"
+msgstr ""
+
+#: class.watchdog-list.php:185
+msgid "Empty trash"
+msgstr ""
+
+#: class.watchdog-list.php:179
+msgid "Export"
+msgstr ""
+
+#: class.watchdog-list.php:175
+msgid "Filter"
+msgstr ""
+
+#: class.watchdog.php:388
+msgid "Find Watchdog"
+msgstr ""
+
+#. time format, see https://www.php.net/date
+#: class.watchdog-list.php:309
+msgid "G:i"
+msgstr ""
+
+#: class.watchdog.php:536 class.watchdog.php:648
+msgid "Housing & Renovation"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://masgroup.agency/"
+msgstr ""
+
+#: class.watchdog-list.php:130
+msgid "Language"
+msgstr ""
+
+#. Author of the plugin
+msgid "MASgroup"
+msgstr ""
+
+#: class.watchdog-list.php:123
+msgid "Name"
+msgstr ""
+
+#: class.watchdog.php:530 class.watchdog.php:607
+msgid "New mortgage"
+msgstr ""
+
+#: class.watchdog.php:385
+msgid "New Watchdog"
+msgstr ""
+
+#: class.watchdog.php:243
+msgid "Pending"
+msgstr ""
+
+#: class.watchdog.php:533 class.watchdog.php:658
+msgid "Personal loan"
+msgstr ""
+
+#: class.watchdog-list.php:124
+msgid "Phone"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin for Watchdog page functionality and notification distribution."
+msgstr ""
+
+#: class.watchdog-list.php:127
+msgid "Rate"
+msgstr ""
+
+#: class.watchdog.php:531 class.watchdog.php:617
+msgid "Refinancing"
+msgstr ""
+
+#: class.watchdog.php:537 class.watchdog.php:637
+msgid "Refinancing & Consolidation"
+msgstr ""
+
+#: class.watchdog.php:679
+msgid "Save"
+msgstr ""
+
+#: class.watchdog.php:493
+msgid "Search"
+msgstr ""
+
+#: class.watchdog.php:243
+msgid "Sent"
+msgstr ""
+
+#: class.watchdog-list.php:129
+msgid "Status"
+msgstr ""
+
+#: class.watchdog.php:390
+msgid "Trash is empty"
+msgstr ""
+
+#: class.watchdog-list.php:126
+msgid "Type"
+msgstr ""
+
+#. Name of the plugin
+#: class.watchdog.php:380 class.watchdog.php:381 class.watchdog.php:387
+#: class.watchdog.php:391 class.watchdog.php:405 class.watchdog.php:406
+#: class.watchdog.php:415
+msgid "Watchdog"
+msgstr ""
+
+#: class.watchdog.php:416
+msgid "Watchdog inbox"
+msgstr ""
+
+#: class.watchdog.php:424 class.watchdog.php:425
+msgid "Watchdog settings"
+msgstr ""
+
+#: class.watchdog.php:389
+msgid "Watchdogs not found"
+msgstr ""

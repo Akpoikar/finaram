@@ -1,0 +1,353 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Calculator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-29 12:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.1\n"
+"X-Domain: calculator-form-data"
+
+#. 1: date, 2: time
+#. Publish box date string. 1: Date, 2: Time.
+#: class.calculator-list.php:463 meta-boxes.php:44
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: class.calculator.php:587
+msgid "Actions"
+msgstr ""
+
+#: class.calculator.php:284
+msgid "Add Calculator"
+msgstr ""
+
+#: class.calculator.php:285
+msgid "Add new Calculator"
+msgstr ""
+
+#: class.calculator.php:288
+msgid "All Calculators"
+msgstr ""
+
+#: class.calculator-list.php:313
+msgid "All categories"
+msgstr ""
+
+#: class.calculator-list.php:294
+msgid "All credit types"
+msgstr ""
+
+#: class.calculator-list.php:303
+msgid "All currencies"
+msgstr ""
+
+#: class.calculator.php:712
+msgid "American mortgage"
+msgstr ""
+
+#. Name of the plugin
+#: class.calculator.php:282 class.calculator.php:283 class.calculator.php:289
+#: class.calculator.php:293 class.calculator.php:308 class.calculator.php:309
+#: class.calculator.php:318
+msgid "Calculator"
+msgstr ""
+
+#: class.calculator.php:319
+msgid "Calculator inbox"
+msgstr ""
+
+#: class.calculator.php:328 class.calculator.php:329
+msgid "Calculator settings"
+msgstr ""
+
+#: class.calculator.php:291
+msgid "Calculators not found"
+msgstr ""
+
+#: edit-inbox-form.php:41
+msgid "Category"
+msgstr ""
+
+#: class.calculator-list.php:339
+msgid "Clear filters"
+msgstr ""
+
+#: calculator-form-data.php:41 class.calculator-list.php:19
+#: class.calculator-list.php:234
+msgid "Credit type"
+msgstr ""
+
+#: calculator-form-data.php:42
+msgid "Currency"
+msgstr ""
+
+#: calculator-form-data.php:43
+msgid "Currency rate"
+msgstr ""
+
+#. date format, see https://www.php.net/date
+#: class.calculator-list.php:465
+msgid "d.m.Y"
+msgstr ""
+
+#: class.calculator-list.php:274 meta-boxes.php:119
+msgid "Delete permanently"
+msgstr ""
+
+#: class.calculator-list.php:359
+msgid "edit"
+msgstr ""
+
+#: class.calculator.php:286
+msgid "Edit Calculator"
+msgstr ""
+
+#: class.calculator-list.php:344
+msgid "Empty trash"
+msgstr ""
+
+#: class.calculator.php:544
+msgid "Error in deleting."
+msgstr ""
+
+#: class.calculator.php:450
+msgid "Error in moving to Trash."
+msgstr ""
+
+#: class.calculator.php:493
+msgid "Error in restoring from Trash."
+msgstr ""
+
+#: class.calculator-list.php:323
+msgid "Filter"
+msgstr ""
+
+#: class.calculator.php:290
+msgid "Find Calculator"
+msgstr ""
+
+#: class.calculator-list.php:488 meta-boxes.php:23
+msgid "Finish step 1"
+msgstr ""
+
+#: class.calculator-list.php:491 meta-boxes.php:28
+msgid "Finish step 2"
+msgstr ""
+
+#: class.calculator-list.php:494 meta-boxes.php:33
+msgid "Finish step 3"
+msgstr ""
+
+#: edit-inbox-form.php:47
+msgid "From"
+msgstr ""
+
+#. time format, see https://www.php.net/date
+#: class.calculator-list.php:467
+msgid "G:i"
+msgstr ""
+
+#: class.calculator.php:713
+msgid "Housing & Renovation"
+msgstr ""
+
+#: edit-inbox-form.php:21
+msgid "Inbox request"
+msgstr ""
+
+#: calculator-form-data.php:48 class.calculator-list.php:24
+#: class.calculator-list.php:239
+msgid "Insurance payment"
+msgstr ""
+
+#: calculator-form-data.php:46 class.calculator-list.php:22
+#: class.calculator-list.php:237
+msgid "Interest rate"
+msgstr ""
+
+#: calculator-form-data.php:44 class.calculator-list.php:20
+#: class.calculator-list.php:235
+msgid "Loan amount"
+msgstr ""
+
+#: class.calculator.php:592
+msgid "Mini calculator results"
+msgstr ""
+
+#: calculator-form-data.php:49 class.calculator-list.php:25
+#: class.calculator-list.php:240
+msgid "Monthly payment"
+msgstr ""
+
+#: class.calculator-list.php:276 meta-boxes.php:121
+msgid "Move to trash"
+msgstr ""
+
+#: class.calculator.php:287
+msgid "New Calculator"
+msgstr ""
+
+#: class.calculator.php:710
+msgid "New mortgage"
+msgstr ""
+
+#: class.calculator-list.php:184
+#, php-format
+msgctxt "posts"
+msgid "Inbox <span class=\"count\">(%s)</span>"
+msgid_plural "Inbox <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: class.calculator-list.php:207
+#, php-format
+msgctxt "posts"
+msgid "Trash <span class=\"count\">(%s)</span>"
+msgid_plural "Trash <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Publish box date format, see https://www.php.net/date
+#: meta-boxes.php:47
+msgctxt "publish box date format"
+msgid "M j, Y"
+msgstr ""
+
+#. Publish box time format, see https://www.php.net/date
+#: meta-boxes.php:52
+msgctxt "publish box time format"
+msgid "H:i"
+msgstr ""
+
+#: class.calculator.php:711
+msgid "Refinancing"
+msgstr ""
+
+#: class.calculator.php:82
+msgid "Request deleted."
+msgstr ""
+
+#: class.calculator.php:80
+msgid "Request restored."
+msgstr ""
+
+#: meta-boxes.php:10
+msgid "Request status"
+msgstr ""
+
+#: class.calculator.php:78
+msgid "Request trashed."
+msgstr ""
+
+#: class.calculator.php:76
+msgid "Request updated."
+msgstr ""
+
+#: class.calculator-list.php:270 meta-boxes.php:97
+msgid "Restore"
+msgstr ""
+
+#: calculator-form-data.php:47 class.calculator-list.php:23
+#: class.calculator-list.php:238
+msgid "RPSN"
+msgstr ""
+
+#: class.calculator.php:679
+msgid "Search"
+msgstr ""
+
+#: class.calculator.php:664
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: class.calculator-list.php:27 class.calculator-list.php:242
+msgid "Status"
+msgstr ""
+
+#: class.calculator.php:600
+msgid "Step 1"
+msgstr ""
+
+#: class.calculator.php:606
+msgid "Step 2"
+msgstr ""
+
+#: class.calculator.php:611
+msgid "Step 3"
+msgstr ""
+
+#: class.calculator.php:583
+msgid "Step status"
+msgstr ""
+
+#. %s: Result of the submission.
+#: meta-boxes.php:71
+#, php-format
+msgid "Submission result: %s"
+msgstr ""
+
+#. %s: message submission date
+#: meta-boxes.php:59
+#, php-format
+msgid "Submitted on: %s"
+msgstr ""
+
+#: class.calculator-list.php:327
+msgid "TODO Export"
+msgstr ""
+
+#: calculator-form-data.php:45 class.calculator-list.php:21
+#: class.calculator-list.php:236
+msgid "Total payment amount"
+msgstr ""
+
+#: class.calculator.php:292
+msgid "Trash is empty"
+msgstr ""
+
+#: class.calculator-list.php:482 meta-boxes.php:13
+msgid "Unknown request"
+msgstr ""
+
+#: meta-boxes.php:148
+msgid "Update"
+msgstr ""
+
+#: class.calculator-list.php:18 class.calculator-list.php:233
+msgid "User"
+msgstr ""
+
+#: class.calculator-list.php:485 meta-boxes.php:18
+msgid "User registered"
+msgstr ""
+
+#: class.calculator-list.php:521
+msgid "View"
+msgstr ""
+
+#: class.calculator.php:540
+msgid "You are not allowed to delete this item."
+msgstr ""
+
+#: class.calculator.php:399 class.calculator.php:573
+msgid "You are not allowed to edit this item."
+msgstr ""
+
+#: class.calculator.php:440
+msgid "You are not allowed to move this item to the Trash."
+msgstr ""
+
+#: class.calculator.php:489
+msgid "You are not allowed to restore this item from the Trash."
+msgstr ""

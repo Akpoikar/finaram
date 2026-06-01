@@ -1,0 +1,209 @@
+<?php
+/**
+ * Template name: Loans documents form
+ */
+$fields        = get_fields();
+$option_fields = get_fields("option");
+
+if (is_user_logged_in()) {
+    $calc = get_actual_user_calc();
+
+    $category = get_the_terms($calc->ID, Calculator::taxonomy);
+
+    $calc->credit_type = get_post_meta($calc->ID, "_mini_calc_credit_type", true);
+}
+get_header("steps");
+?>
+    <div class="wrapper-form">
+        <div class="header-form">
+            <a class="back" href="<?= home_url(); ?>">
+                <?php _e("Return to Homepage", 'finanzia'); ?>
+            </a>
+            <a class="header-form__logo" href="<?= home_url(); ?>">
+                <svg width="145" height="29" viewBox="0 0 145 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M41.3 8.5V13.3H48.6V14.8H41.3V21H38.4V7H51V8.5H41.3ZM55.6945 21H52.7945V7H55.6945V21ZM72.8977 7V21H69.0977L61.5977 9.6H61.3977V21H58.4977V7H62.2977L69.7977 18.4H69.9977V7H72.8977ZM79.4047 16.1H85.6047L82.6047 8.7H82.4047L79.4047 16.1ZM84.8047 7L90.5047 21H87.6247L86.3047 17.6H78.7047L77.3847 21H74.5047L80.2047 7H84.8047ZM99.3109 7C100.311 7 101.204 7.11333 101.991 7.34C102.791 7.55333 103.464 7.87333 104.011 8.3C104.558 8.71333 104.978 9.22667 105.271 9.84C105.564 10.44 105.711 11.1267 105.711 11.9C105.711 12.9667 105.444 13.8667 104.911 14.6C104.378 15.3333 103.611 15.8933 102.611 16.28L105.911 21H102.611L99.6709 16.8H99.3109H95.0109V21H92.1109V7H99.3109ZM95.0109 8.5V15.3H99.3109C100.364 15.3 101.178 15.0267 101.751 14.48C102.324 13.92 102.611 13.06 102.611 11.9C102.611 10.74 102.324 9.88667 101.751 9.34C101.178 8.78 100.364 8.5 99.3109 8.5H95.0109ZM111.807 16.1H118.007L115.007 8.7H114.807L111.807 16.1ZM117.207 7L122.907 21H120.027L118.707 17.6H111.107L109.787 21H106.907L112.607 7H117.207ZM134.013 19H134.213L139.413 7H143.713V21H140.813V9.8H140.613L135.813 21H132.413L127.613 9.8H127.413V21H124.513V7H128.813L134.013 19Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M14.0321 0.00931473C12.4818 0.121387 11.3188 0.337571 10.0647 0.746879C7.25088 1.66513 4.71221 3.4783 2.88626 5.87394C1.65216 7.49303 0.71589 9.54797 0.30451 11.5403C0.105433 12.5044 0.0367075 13.0911 0.00690761 14.0803C-0.0847844 17.1271 0.736873 19.9709 2.44159 22.5065C4.92199 26.1961 8.91302 28.5451 13.4099 28.9624C14.2338 29.0388 16.1169 28.9929 16.8693 28.878C19.1711 28.5264 21.1896 27.7592 23.025 26.5379C24.5458 25.5261 26.0407 24.0478 27.0437 22.564C27.4387 21.9796 27.9243 21.1718 27.8807 21.1718C27.8705 21.1718 27.726 21.3887 27.5595 21.6538C27.3931 21.9188 27.0786 22.3642 26.8606 22.6435C26.383 23.2555 25.2135 24.4291 24.6279 24.8839C22.5621 26.4887 20.1181 27.4637 17.5684 27.7003C16.75 27.7762 15.0797 27.7316 14.3007 27.613C11.6453 27.2087 9.13877 25.9996 7.15857 24.1679C4.77551 21.9634 3.30575 18.9863 2.98544 15.7148C2.91099 14.954 2.95683 13.2974 3.07281 12.5575C3.57395 9.36168 5.1611 6.53654 7.64234 4.42387C11.2706 1.33452 16.4302 0.421364 20.9168 2.07452C23.7177 3.10658 26.1243 5.04362 27.6302 7.47815C27.7597 7.68755 27.8742 7.85883 27.8847 7.85883C27.949 7.85883 27.1138 6.52384 26.7152 5.98953C25.8059 4.77044 24.6043 3.59433 23.3952 2.73969C21.3171 1.27074 19.003 0.390344 16.4346 0.0914987C15.8873 0.0278053 14.4542 -0.0212268 14.0321 0.00931473ZM15.4648 2.09819C15.3799 2.10811 15.1121 2.13678 14.8697 2.16184C13.7513 2.27752 12.253 2.68266 11.1888 3.15718C8.95314 4.15409 7.13353 5.67355 5.79408 7.6621C5.4878 8.11678 5.19085 8.60253 5.24856 8.55454C5.26319 8.54236 5.40461 8.34132 5.56278 8.10782C7.1062 5.82956 9.55041 4.15 12.3155 3.46773C13.2536 3.23623 13.744 3.18507 15.024 3.18507C16.3626 3.18507 16.8219 3.23758 17.9114 3.51515C21.7853 4.50205 24.9144 7.51487 26.0377 11.3393C26.3775 12.4961 26.5051 13.5126 26.4722 14.7981C26.4455 15.8355 26.378 16.338 26.1361 17.2997C25.9196 18.1605 25.727 18.6736 25.2949 19.5403C24.1572 21.8224 22.3724 23.5848 20.0714 24.6978C19.2335 25.1032 18.6908 25.3055 17.8982 25.5079C14.772 26.3062 11.3983 25.7519 8.73603 24.0027C7.99861 23.5181 7.55073 23.1528 6.88372 22.4916C6.27304 21.8864 5.9571 21.5042 5.50464 20.8238C5.17587 20.3293 5.12835 20.277 5.32663 20.628C5.82922 21.5175 6.53577 22.4151 7.41699 23.2836C8.47568 24.3272 9.32039 24.9346 10.6157 25.584C12.8987 26.7285 15.3767 27.1554 17.9334 26.8447C23.122 26.214 27.4047 22.46 28.6489 17.452C28.9492 16.2432 29.0736 14.6032 28.9564 13.3977C28.636 10.1032 27.0497 7.10482 24.5281 5.02743C24.2105 4.76583 23.9249 4.56144 23.8933 4.57331C23.8618 4.58515 23.8473 4.57675 23.8611 4.55465C23.9174 4.46477 22.8083 3.77645 21.9009 3.33817C20.6826 2.74974 19.4129 2.36993 18.0216 2.17785C17.5775 2.11655 15.7851 2.06069 15.4648 2.09819ZM22.8046 6.03156C22.8484 6.07942 22.8744 6.11858 22.8623 6.11858C22.8502 6.11858 22.8044 6.07942 22.7605 6.03156C22.7166 5.98371 22.6906 5.94455 22.7027 5.94455C22.7149 5.94455 22.7607 5.98371 22.8046 6.03156Z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="form-page">
+            <div class="form-content">
+                <ul class="form-line">
+                    <li class="active">
+                        <div class="form-line__number">
+                            1
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Contact Info", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            2
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Personal Info", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            3
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Address", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            4
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Current Loans", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            5
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Income Info", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            6
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Other Info", 'finanzia'); ?>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="form-line__number">
+                            7
+                        </div>
+                        <div class="form-line__name">
+                            <?php _e("Documents", 'finanzia'); ?>
+                        </div>
+                    </li>
+                </ul>
+                <form class="big-form js_one_send" method="post" enctype="multipart/form-data">
+                    <?php wp_nonce_field('mortgages-form-step-doc-action-' . $calc->ID, 'mortgages-form-step-doc-field-' . $calc->ID); ?>
+                    <input data-text="<?php _e("file", 'finanzia'); ?>" data-texts="<?php _e("files", 'finanzia'); ?>"
+                           type="hidden" name="step_doc[calc_id]"
+                           value="<?= $calc->ID ?>">
+                    <div class="form-line__title">
+                        <?php _e("Upload Documents (Optional)", 'finanzia'); ?>
+                    </div>
+                    <div class="form-line__text">
+                        <?php _e("Please upload the necessary documents in the form below", 'finanzia'); ?>
+                    </div>
+                    <div class="big-form__holder">
+                        <div class="big-form__variant">
+                            <div class="documents">
+                                <div class="contacts__label">
+                                    <?php _e("Upload your passport", 'finanzia'); ?>
+                                </div>
+                                <div class="file-upload">
+                                    <label class="file-upload__label">
+                                          <span class="file-upload__ico">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 20 20" fill="none">
+                                            <path d="M6.66797 13.3333L10.0013 10M10.0013 10L13.3346 13.3333M10.0013 10V17.5M16.668 13.9524C17.6859 13.1117 18.3346 11.8399 18.3346 10.4167C18.3346 7.88536 16.2826 5.83333 13.7513 5.83333C13.5692 5.83333 13.3989 5.73833 13.3064 5.58145C12.2197 3.73736 10.2133 2.5 7.91797 2.5C4.46619 2.5 1.66797 5.29822 1.66797 8.75C1.66797 10.4718 2.36417 12.0309 3.49043 13.1613"
+                                                  stroke="#DD6B3A" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            </svg>
+                                          </span>
+                                        <span class="file-upload__title"
+                                              data-first="<?php _e("Click to upload", 'finanzia'); ?>"
+                                              data-second="<?php _e("or drag and drop", 'finanzia'); ?>"><span><?php _e("Click to upload", 'finanzia'); ?></span>&nbsp;<?php _e("or drag and drop", 'finanzia'); ?></span>
+                                        <span class="file-upload__format"><?php _e("PDF, PNG or JPG", 'finanzia'); ?></span>
+                                    </label>
+                                    <input data-text="<?php _e("file", 'finanzia'); ?>"
+                                           data-texts="<?php _e("files", 'finanzia'); ?>"
+                                           name="step_doc[passport_documents][]"
+                                           type="file"
+                                           multiple class="file-upload__input file-upload__all">
+                                    <button type="button"
+                                            class="clear-files-btn"><?php _e("Clear Files", 'finanzia'); ?></button>
+                                    <div class="file-upload-error">
+                                        <?php _e("Please upload PDF, PNG or JPG!", 'finanzia'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents">
+                                <div class="contacts__label">
+                                    <?php _e("Upload your Czech ID card", 'finanzia'); ?>
+                                </div>
+                                <div class="file-upload">
+                                    <label class="file-upload__label">
+                                          <span class="file-upload__ico">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 20 20" fill="none">
+                                            <path d="M6.66797 13.3333L10.0013 10M10.0013 10L13.3346 13.3333M10.0013 10V17.5M16.668 13.9524C17.6859 13.1117 18.3346 11.8399 18.3346 10.4167C18.3346 7.88536 16.2826 5.83333 13.7513 5.83333C13.5692 5.83333 13.3989 5.73833 13.3064 5.58145C12.2197 3.73736 10.2133 2.5 7.91797 2.5C4.46619 2.5 1.66797 5.29822 1.66797 8.75C1.66797 10.4718 2.36417 12.0309 3.49043 13.1613"
+                                                  stroke="#DD6B3A" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            </svg>
+                                          </span>
+                                        <span class="file-upload__title"
+                                              data-first="<?php _e("Click to upload", 'finanzia'); ?>"
+                                              data-second="<?php _e("or drag and drop", 'finanzia'); ?>"><span><?php _e("Click to upload", 'finanzia'); ?></span>&nbsp;<?php _e("or drag and drop", 'finanzia'); ?></span>
+                                        <span class="file-upload__format"><?php _e("PDF, PNG or JPG", 'finanzia'); ?></span>
+                                    </label>
+                                    <input data-text="<?php _e("file", 'finanzia'); ?>"
+                                           data-texts="<?php _e("files", 'finanzia'); ?>"
+                                           name="step_doc[czech_id_card_documents][]"
+                                           type="file"
+                                           multiple class="file-upload__input file-upload__all">
+                                    <button type="button"
+                                            class="clear-files-btn"><?php _e("Clear Files", 'finanzia'); ?></button>
+                                    <div class="file-upload-error">
+                                        <?php _e("Please upload PDF, PNG or JPG!", 'finanzia'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="documents">
+                                <div class="contacts__label">
+                                    <?php _e("Upload your Czech ID number (Rodné číslo) — if available", 'finanzia'); ?>
+                                </div>
+                                <div class="file-upload">
+                                    <label class="file-upload__label">
+                                          <span class="file-upload__ico">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 20 20" fill="none">
+                                            <path d="M6.66797 13.3333L10.0013 10M10.0013 10L13.3346 13.3333M10.0013 10V17.5M16.668 13.9524C17.6859 13.1117 18.3346 11.8399 18.3346 10.4167C18.3346 7.88536 16.2826 5.83333 13.7513 5.83333C13.5692 5.83333 13.3989 5.73833 13.3064 5.58145C12.2197 3.73736 10.2133 2.5 7.91797 2.5C4.46619 2.5 1.66797 5.29822 1.66797 8.75C1.66797 10.4718 2.36417 12.0309 3.49043 13.1613"
+                                                  stroke="#DD6B3A" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            </svg>
+                                          </span>
+                                        <span class="file-upload__title"
+                                              data-first="<?php _e("Click to upload", 'finanzia'); ?>"
+                                              data-second="<?php _e("or drag and drop", 'finanzia'); ?>"><span><?php _e("Click to upload", 'finanzia'); ?></span>&nbsp;<?php _e("or drag and drop", 'finanzia'); ?></span>
+                                        <span class="file-upload__format"><?php _e("PDF, PNG or JPG", 'finanzia'); ?></span>
+                                    </label>
+                                    <input data-text="<?php _e("file", 'finanzia'); ?>"
+                                           data-texts="<?php _e("files", 'finanzia'); ?>"
+                                           name="step_doc[czech_id_number_documents][]"
+                                           type="file"
+                                           multiple class="file-upload__input file-upload__all">
+                                    <button type="button"
+                                            class="clear-files-btn"><?php _e("Clear Files", 'finanzia'); ?></button>
+                                    <div class="file-upload-error">
+                                        <?php _e("Please upload PDF, PNG or JPG!", 'finanzia'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="big-form__btn big-form__btn--confirm" type="submit">
+                        <?php _e("SUBMIT", 'finanzia'); ?>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var filesText = "<?php _e("Files to upload", 'finanzia'); ?>";
+    </script>
+<?php
+get_footer("steps");

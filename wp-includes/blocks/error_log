@@ -1,0 +1,16 @@
+[29-Sep-2024 14:06:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ABSPATH" in /home/finaysyw/public_html/wp-includes/blocks/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/finaysyw/public_html/wp-includes/blocks/index.php on line 8
+[02-Oct-2024 03:25:38 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ABSPATH" in /home/finaysyw/public_html/wp-includes/blocks/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/finaysyw/public_html/wp-includes/blocks/index.php on line 8
+[03-Oct-2024 09:54:51 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ABSPATH" in /home/finaysyw/public_html/wp-includes/blocks/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/finaysyw/public_html/wp-includes/blocks/index.php on line 8
+[05-Oct-2024 07:44:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ABSPATH" in /home/finaysyw/public_html/wp-includes/blocks/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/finaysyw/public_html/wp-includes/blocks/index.php on line 8

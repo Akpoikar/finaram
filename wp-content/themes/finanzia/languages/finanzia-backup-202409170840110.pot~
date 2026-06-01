@@ -1,0 +1,1618 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: finanzia\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-06 08:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.2\n"
+"X-Domain: finanzia"
+
+#: template-thank-you-page.php:87
+msgid "% filled"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:146
+msgid "(average rent throughout the term)"
+msgstr ""
+
+#: template-parts/part-simple-mortgage.php:34 template-parts/part-rent.php:34
+#: template-parts/part-investment.php:34
+msgid ""
+"A simple calculation of whether a mortgage or rent is more profitable for "
+"you."
+msgstr ""
+
+#. Author of the theme
+msgid "a.gorban"
+msgstr ""
+
+#: template-parts/part-links.php:22
+msgid "About"
+msgstr ""
+
+#: libs/front.php:6
+msgid "Afghanistan"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:244
+msgid "After"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:111
+#: template-parts/part-mortgage-calc.php:631
+#: template-parts/part-new-mortgage-page-top-block.php:115
+msgid "Age — Years"
+msgstr ""
+
+#: libs/front.php:7
+msgid "Albania"
+msgstr ""
+
+#: libs/front.php:8
+msgid "Algeria"
+msgstr ""
+
+#: template-contact.php:42
+msgid "Always here for support and questions"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:20
+msgid "American Mortgage"
+msgstr ""
+
+#: template-watchdog.php:63
+msgid "American mortgage"
+msgstr ""
+
+#: front-page.php:338 template-parts/part-reviews.php:57
+msgid "Amount"
+msgstr ""
+
+#: template-parts/part-login-email.php:24
+msgid "and"
+msgstr ""
+
+#: libs/front.php:9
+msgid "Andorra"
+msgstr ""
+
+#: libs/front.php:10
+msgid "Angola"
+msgstr ""
+
+#: libs/front.php:11
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:204
+#: template-parts/part-loans-calc.php:393
+#: template-parts/part-loans-calc.php:582
+#: template-parts/part-housing-renovation-calc.php:179
+#: template-parts/part-refinancing-page-top-block.php:256
+#: template-parts/part-mortgage-calc.php:286
+#: template-parts/part-mortgage-calc.php:538
+#: template-parts/part-mortgage-calc.php:806
+#: template-parts/part-mortgage-calc.php:993
+#: template-parts/part-personal-loan-page-top-block.php:211
+#: template-parts/part-new-mortgage-page-top-block.php:290
+#: template-parts/part-simple-mortgage-calc.php:235
+msgid "Apply Online"
+msgstr ""
+
+#: libs/front.php:256 libs/front.php:286
+msgid "April"
+msgstr ""
+
+#: libs/front.php:12
+msgid "Argentina"
+msgstr ""
+
+#: libs/front.php:13
+msgid "Armenia"
+msgstr ""
+
+#: libs/front.php:260 libs/front.php:290
+msgid "August"
+msgstr ""
+
+#: libs/front.php:14
+msgid "Australia"
+msgstr ""
+
+#: libs/front.php:15
+msgid "Austria"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:17
+msgid "Auto Loan"
+msgstr ""
+
+#: template-watchdog.php:73
+msgid "Auto loan"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:218
+msgid "Auto loan amount — CZK"
+msgstr ""
+
+#: libs/front.php:16
+msgid "Azerbaijan"
+msgstr ""
+
+#: 404.php:18
+msgid "Back to homepage"
+msgstr ""
+
+#: libs/front.php:17
+msgid "Bahamas"
+msgstr ""
+
+#: libs/front.php:18
+msgid "Bahrain"
+msgstr ""
+
+#: libs/front.php:19
+msgid "Bangladesh"
+msgstr ""
+
+#: libs/front.php:20
+msgid "Barbados"
+msgstr ""
+
+#: libs/front.php:21
+msgid "Belarus"
+msgstr ""
+
+#: libs/front.php:22
+msgid "Belgium"
+msgstr ""
+
+#: libs/front.php:23
+msgid "Belize"
+msgstr ""
+
+#: libs/front.php:24
+msgid "Benin"
+msgstr ""
+
+#: libs/front.php:25
+msgid "Bhutan"
+msgstr ""
+
+#: single-articles.php:20
+msgid "Blog"
+msgstr ""
+
+#: libs/front.php:26
+msgid "Bolivia"
+msgstr ""
+
+#: libs/front.php:27
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: libs/front.php:28
+msgid "Botswana"
+msgstr ""
+
+#: libs/front.php:29
+msgid "Brazil"
+msgstr ""
+
+#: libs/front.php:30
+msgid "Brunei"
+msgstr ""
+
+#: libs/front.php:31
+msgid "Bulgaria"
+msgstr ""
+
+#: libs/front.php:32
+msgid "Burkina Faso"
+msgstr ""
+
+#: libs/front.php:33
+msgid "Burundi"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:274
+msgid "By choosing a mortgage, you save"
+msgstr ""
+
+#: libs/front.php:34
+msgid "Cabo Verde"
+msgstr ""
+
+#: template-parts/part-calculators-list-top-block.php:39
+msgid "Calculate"
+msgstr ""
+
+#: front-page.php:261 template-parts/part-why.php:141
+msgid "Calculate the Best Mortgage"
+msgstr ""
+
+#: template-parts/part-breadcrumbs.php:6
+#: template-parts/part-refinancing-page-top-block.php:14
+#: template-parts/part-links.php:7 template-parts/part-simple-mortgage.php:14
+#: template-parts/part-personal-loan-page-top-block.php:14
+#: template-parts/part-rent.php:14 template-parts/part-investment.php:14
+#: template-parts/part-new-mortgage-page-top-block.php:14
+#: template-parts/part-housing-renovation-top-block.php:14
+msgid "Calculators"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:224
+#: template-parts/part-loans-calc.php:206
+#: template-parts/part-loans-calc.php:395
+#: template-parts/part-loans-calc.php:584
+#: template-parts/part-mortgage-investment-calc.php:308
+#: template-parts/part-housing-renovation-calc.php:181
+#: template-parts/part-refinancing-page-top-block.php:258
+#: template-parts/part-mortgage-calc.php:288
+#: template-parts/part-mortgage-calc.php:540
+#: template-parts/part-mortgage-calc.php:808
+#: template-parts/part-mortgage-calc.php:995
+#: template-parts/part-personal-loan-page-top-block.php:213
+#: template-parts/part-new-mortgage-page-top-block.php:292
+#: template-parts/part-simple-mortgage-calc.php:237
+msgid "Call Back"
+msgstr ""
+
+#: template-parts/part-benefits.php:9 template-parts/part-cost.php:55
+msgid "Call back"
+msgstr ""
+
+#: template-contact.php:39
+msgid "Call us"
+msgstr ""
+
+#: libs/front.php:35
+msgid "Cambodia"
+msgstr ""
+
+#: libs/front.php:36
+msgid "Cameroon"
+msgstr ""
+
+#: libs/front.php:37
+msgid "Canada"
+msgstr ""
+
+#: libs/front.php:38
+msgid "Central African Republic"
+msgstr ""
+
+#: libs/front.php:39
+msgid "Chad"
+msgstr ""
+
+#: template-contact.php:29
+msgid "Chat with us"
+msgstr ""
+
+#: libs/front.php:40
+msgid "Chile"
+msgstr ""
+
+#: libs/front.php:41
+msgid "China"
+msgstr ""
+
+#: template-watchdog.php:47
+msgid "Choose credit type"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:275
+msgid "Choosing to rent saves you"
+msgstr ""
+
+#: template-parts/part-links.php:52
+msgid "Client Feedback"
+msgstr ""
+
+#: front-page.php:257 template-parts/part-why.php:137
+msgid "Close more benefits"
+msgstr ""
+
+#: libs/front.php:42
+msgid "Colombia"
+msgstr ""
+
+#: template-contact.php:52
+msgid "Come say hello at our office"
+msgstr ""
+
+#: libs/front.php:43
+msgid "Comoros"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:209
+msgid "Comparison year"
+msgstr ""
+
+#: template-parts/part-login-code.php:20
+msgid "confirm registration"
+msgstr ""
+
+#: libs/front.php:44
+msgid "Congo (Democratic Republic)"
+msgstr ""
+
+#: libs/front.php:45
+msgid "Congo (Republic)"
+msgstr ""
+
+#: template-parts/part-login-code.php:2 template-parts/part-login-email.php:2
+msgid "Contact Information"
+msgstr ""
+
+#: template-contact.php:74
+msgid "Contact Us"
+msgstr ""
+
+#: footer.php:62
+msgid "Contacts"
+msgstr ""
+
+#: template-parts/part-links.php:27
+msgid "Cost of our services"
+msgstr ""
+
+#: libs/front.php:46
+msgid "Costa Rica"
+msgstr ""
+
+#: template-watchdog.php:116
+msgid "Create Watchdog"
+msgstr ""
+
+#: template-parts/part-breadcrumbs.php:5
+msgid "Credit Cards"
+msgstr ""
+
+#: template-watchdog.php:44
+msgid "Credit type"
+msgstr ""
+
+#: libs/front.php:47
+msgid "Croatia"
+msgstr ""
+
+#: libs/front.php:48
+msgid "Cuba"
+msgstr ""
+
+#: libs/front.php:49
+msgid "Cyprus"
+msgstr ""
+
+#: libs/front.php:50
+msgid "Czech Republic"
+msgstr ""
+
+#: libs/front.php:214
+msgid "Day"
+msgstr ""
+
+#: libs/front.php:264 libs/front.php:294
+msgid "December"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:139
+msgid "Delta"
+msgstr ""
+
+#: libs/front.php:51
+msgid "Denmark"
+msgstr ""
+
+#: libs/front.php:52
+msgid "Djibouti"
+msgstr ""
+
+#: libs/front.php:53
+msgid "Dominica"
+msgstr ""
+
+#: libs/front.php:54
+msgid "Dominican Republic"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:38
+#: template-parts/part-mortgage-calc.php:50
+#: template-parts/part-mortgage-calc.php:570
+#: template-parts/part-new-mortgage-page-top-block.php:54
+#: template-parts/part-simple-mortgage-calc.php:27
+msgid "Down payment — %"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:67
+#: template-parts/part-mortgage-calc.php:587
+#: template-parts/part-new-mortgage-page-top-block.php:71
+#: template-parts/part-simple-mortgage-calc.php:44
+msgid "Down payment — CZK"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:62 template-parts/part-loans-calc.php:251
+#: template-parts/part-loans-calc.php:440
+#: template-parts/part-housing-renovation-calc.php:24
+#: template-parts/part-refinancing-page-top-block.php:71
+#: template-parts/part-mortgage-calc.php:82
+#: template-parts/part-mortgage-calc.php:354
+#: template-parts/part-mortgage-calc.php:602
+#: template-parts/part-mortgage-calc.php:838
+#: template-parts/part-personal-loan-page-top-block.php:69
+#: template-parts/part-new-mortgage-page-top-block.php:86
+#: template-parts/part-simple-mortgage-calc.php:59
+msgid "Duration — Years"
+msgstr ""
+
+#: template-parts/part-login-email.php:13
+msgid "E-mail"
+msgstr ""
+
+#: libs/front.php:55
+msgid "East Timor (Timor-Leste)"
+msgstr ""
+
+#: libs/front.php:56
+msgid "Ecuador"
+msgstr ""
+
+#: libs/front.php:57
+msgid "Egypt"
+msgstr ""
+
+#: libs/front.php:58
+msgid "El Salvador"
+msgstr ""
+
+#: template-watchdog.php:104
+msgid "Email"
+msgstr ""
+
+#: template-parts/part-login-code.php:5
+msgid "Enter the code that you received in your e-mail."
+msgstr ""
+
+#: template-parts/part-login-email.php:15
+msgid "Enter your e-mail"
+msgstr ""
+
+#: template-watchdog.php:107
+msgid "Enter your email"
+msgstr ""
+
+#: template-watchdog.php:100
+msgid "Enter your name"
+msgstr ""
+
+#: libs/front.php:59
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: libs/front.php:60
+msgid "Eritrea"
+msgstr ""
+
+#: libs/front.php:61
+msgid "Estonia"
+msgstr ""
+
+#: libs/front.php:62
+msgid "Eswatini"
+msgstr ""
+
+#: libs/front.php:63
+msgid "Ethiopia"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:189
+msgid "Expected property increase — %"
+msgstr ""
+
+#: template-parts/part-links.php:37
+msgid "FAQ"
+msgstr ""
+
+#: libs/front.php:254 libs/front.php:284
+msgid "February"
+msgstr ""
+
+#: libs/front.php:64
+msgid "Fiji"
+msgstr ""
+
+#: template-watchdog.php:38
+msgid "Fill the form"
+msgstr ""
+
+#. Name of the theme
+msgid "finanzia"
+msgstr ""
+
+#: archive-articles.php:14 archive-articles.php:19
+msgid "Finaram blog"
+msgstr ""
+
+#: libs/front.php:65
+msgid "Finland"
+msgstr ""
+
+#: front-page.php:355 template-parts/part-reviews.php:74
+msgid "Fixation"
+msgstr ""
+
+#: template-parts/part-housing-renovation-calc.php:41
+#: template-parts/part-refinancing-page-top-block.php:88
+#: template-parts/part-mortgage-calc.php:99
+#: template-parts/part-mortgage-calc.php:371
+#: template-parts/part-mortgage-calc.php:619
+#: template-parts/part-mortgage-calc.php:855
+#: template-parts/part-new-mortgage-page-top-block.php:103
+msgid "Fixation — Years"
+msgstr ""
+
+#: header.php:127 header.php:128 header.php:139 header.php:140
+msgid "flag"
+msgstr ""
+
+#: libs/front.php:66
+msgid "France"
+msgstr ""
+
+#: libs/front.php:67
+msgid "Gabon"
+msgstr ""
+
+#: libs/front.php:68
+msgid "Gambia"
+msgstr ""
+
+#: libs/front.php:69
+msgid "Georgia"
+msgstr ""
+
+#: libs/front.php:70
+msgid "Germany"
+msgstr ""
+
+#: header.php:150 footer.php:95
+msgid "Get Consultation"
+msgstr ""
+
+#: libs/front.php:71
+msgid "Ghana"
+msgstr ""
+
+#: template-thank-you-page.php:261
+msgid "Go back to home page"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:220
+#: template-parts/part-mortgage-investment-calc.php:306
+msgid "Go to mortgages Calculators"
+msgstr ""
+
+#: libs/front.php:72
+msgid "Greece"
+msgstr ""
+
+#: libs/front.php:73
+msgid "Grenada"
+msgstr ""
+
+#: libs/front.php:74
+msgid "Guatemala"
+msgstr ""
+
+#: libs/front.php:75
+msgid "Guinea"
+msgstr ""
+
+#: libs/front.php:76
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: libs/front.php:77
+msgid "Guyana"
+msgstr ""
+
+#: libs/front.php:78
+msgid "Haiti"
+msgstr ""
+
+#: single-articles.php:12 index.php:11 template-contact.php:13
+#: template-watchdog.php:14 archive-articles.php:9 template-about.php:13
+#: template-parts/part-breadcrumbs.php:14
+#: template-parts/part-refinancing-page-top-block.php:6
+#: template-parts/part-simple-mortgage.php:6
+#: template-parts/part-calculators-list-top-block.php:15
+#: template-parts/part-personal-loan-page-top-block.php:6
+#: template-parts/part-rent.php:6 template-parts/part-investment.php:6
+#: template-parts/part-new-mortgage-page-top-block.php:6
+#: template-parts/part-housing-renovation-top-block.php:6
+msgid "Home"
+msgstr ""
+
+#: libs/front.php:79
+msgid "Honduras"
+msgstr ""
+
+#: template-watchdog.php:81 template-parts/part-mortgage-calc.php:23
+msgid "Housing & Renovation"
+msgstr ""
+
+#: template-parts/part-links.php:17
+msgid "How does it work"
+msgstr ""
+
+#: libs/front.php:80
+msgid "Hungary"
+msgstr ""
+
+#: template-parts/part-login-email.php:22
+msgid "I agree to the"
+msgstr ""
+
+#: libs/front.php:81
+msgid "Iceland"
+msgstr ""
+
+#: header.php:127 header.php:139
+msgid "icon"
+msgstr ""
+
+#: libs/front.php:82
+msgid "India"
+msgstr ""
+
+#: libs/front.php:83
+msgid "Indonesia"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:131
+msgid "Initial Rent Payment — CZK"
+msgstr ""
+
+#: template-thank-you-page.php:188
+msgid "Insurance (included)"
+msgstr ""
+
+#: template-parts/part-refinancing-page-top-block.php:103
+#: template-parts/part-refinancing-page-top-block.php:220
+#: template-parts/part-mortgage-calc.php:134
+#: template-parts/part-mortgage-calc.php:250
+#: template-parts/part-mortgage-calc.php:386
+#: template-parts/part-mortgage-calc.php:502
+#: template-parts/part-mortgage-calc.php:654
+#: template-parts/part-mortgage-calc.php:770
+#: template-parts/part-new-mortgage-page-top-block.php:138
+#: template-parts/part-new-mortgage-page-top-block.php:254
+#: template-parts/part-simple-mortgage-calc.php:82
+#: template-parts/part-simple-mortgage-calc.php:199
+msgid "Insurance payment"
+msgstr ""
+
+#: front-page.php:372 template-parts/part-reviews.php:91
+msgid "Interest Rate"
+msgstr ""
+
+#: template-thank-you-page.php:138 template-parts/part-loans-calc.php:147
+#: template-parts/part-loans-calc.php:336
+#: template-parts/part-loans-calc.php:525
+#: template-parts/part-housing-renovation-calc.php:122
+#: template-parts/part-refinancing-page-top-block.php:178
+#: template-parts/part-mortgage-calc.php:208
+#: template-parts/part-mortgage-calc.php:460
+#: template-parts/part-mortgage-calc.php:728
+#: template-parts/part-mortgage-calc.php:936
+#: template-parts/part-personal-loan-page-top-block.php:154
+#: template-parts/part-new-mortgage-page-top-block.php:212
+#: template-parts/part-simple-mortgage-calc.php:157
+msgid "Interest rate"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:67
+#: template-parts/part-simple-mortgage-calc.php:76
+msgid "Interest rate — %"
+msgstr ""
+
+#: libs/front.php:84
+msgid "Iran"
+msgstr ""
+
+#: libs/front.php:85
+msgid "Iraq"
+msgstr ""
+
+#: libs/front.php:86
+msgid "Ireland"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:207
+msgid "is a bad choice"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:206
+msgid "is a good choice"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:287
+msgid "Is getting a mortgage a good idea?"
+msgstr ""
+
+#: libs/front.php:87
+msgid "Israel"
+msgstr ""
+
+#: libs/front.php:88
+msgid "Italy"
+msgstr ""
+
+#: libs/front.php:89
+msgid "Jamaica"
+msgstr ""
+
+#: libs/front.php:253 libs/front.php:283
+msgid "January"
+msgstr ""
+
+#: libs/front.php:90
+msgid "Japan"
+msgstr ""
+
+#: libs/front.php:91
+msgid "Jordan"
+msgstr ""
+
+#: libs/front.php:259 libs/front.php:289
+msgid "July"
+msgstr ""
+
+#: libs/front.php:258 libs/front.php:288
+msgid "June"
+msgstr ""
+
+#: libs/front.php:92
+msgid "Kazakhstan"
+msgstr ""
+
+#: libs/front.php:93
+msgid "Kenya"
+msgstr ""
+
+#: libs/front.php:94
+msgid "Kiribati"
+msgstr ""
+
+#: libs/front.php:95
+msgid "Korea (North)"
+msgstr ""
+
+#: libs/front.php:96
+msgid "Korea (South)"
+msgstr ""
+
+#: libs/front.php:97
+msgid "Kosovo"
+msgstr ""
+
+#: libs/front.php:98
+msgid "Kuwait"
+msgstr ""
+
+#: libs/front.php:99
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: libs/front.php:100
+msgid "Laos"
+msgstr ""
+
+#: libs/front.php:101
+msgid "Latvia"
+msgstr ""
+
+#: libs/front.php:102
+msgid "Lebanon"
+msgstr ""
+
+#: libs/front.php:103
+msgid "Lesotho"
+msgstr ""
+
+#: libs/front.php:104
+msgid "Liberia"
+msgstr ""
+
+#: libs/front.php:105
+msgid "Libya"
+msgstr ""
+
+#: libs/front.php:106
+msgid "Liechtenstein"
+msgstr ""
+
+#: template-watchdog.php:87
+msgid "Limit rate %"
+msgstr ""
+
+#: libs/front.php:107
+msgid "Lithuania"
+msgstr ""
+
+#: template-watchdog.php:49
+msgid "Loan"
+msgstr ""
+
+#: template-thank-you-page.php:106 template-parts/part-loans-calc.php:105
+#: template-parts/part-loans-calc.php:294
+#: template-parts/part-loans-calc.php:483
+#: template-parts/part-housing-renovation-calc.php:80
+#: template-parts/part-refinancing-page-top-block.php:136
+#: template-parts/part-mortgage-calc.php:166
+#: template-parts/part-mortgage-calc.php:418
+#: template-parts/part-mortgage-calc.php:686
+#: template-parts/part-mortgage-calc.php:894
+#: template-parts/part-personal-loan-page-top-block.php:112
+#: template-parts/part-new-mortgage-page-top-block.php:170
+#: template-parts/part-simple-mortgage-calc.php:115
+msgid "Loan amount"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:29
+#: template-parts/part-housing-renovation-calc.php:6
+#: template-parts/part-mortgage-calc.php:820
+#: template-parts/part-personal-loan-page-top-block.php:36
+msgid "Loan amount — CZK"
+msgstr ""
+
+#: template-parts/part-links.php:12
+msgid "Loan of banks"
+msgstr ""
+
+#: front-page.php:364 template-parts/part-reviews.php:83
+msgid "Loan Term"
+msgstr ""
+
+#: template-parts/part-breadcrumbs.php:4
+msgid "Loans"
+msgstr ""
+
+#: libs/front.php:108
+msgid "Luxembourg"
+msgstr ""
+
+#: libs/front.php:109
+msgid "Madagascar"
+msgstr ""
+
+#: libs/front.php:110
+msgid "Malawi"
+msgstr ""
+
+#: libs/front.php:111
+msgid "Malaysia"
+msgstr ""
+
+#: libs/front.php:112
+msgid "Maldives"
+msgstr ""
+
+#: libs/front.php:113
+msgid "Mali"
+msgstr ""
+
+#: libs/front.php:114
+msgid "Malta"
+msgstr ""
+
+#: libs/front.php:255 libs/front.php:285
+msgid "March"
+msgstr ""
+
+#: libs/front.php:115
+msgid "Marshall Islands"
+msgstr ""
+
+#: libs/front.php:116
+msgid "Mauritania"
+msgstr ""
+
+#: libs/front.php:117
+msgid "Mauritius"
+msgstr ""
+
+#: libs/front.php:257 libs/front.php:287
+msgid "May"
+msgstr ""
+
+#: libs/front.php:118
+msgid "Mexico"
+msgstr ""
+
+#: libs/front.php:119
+msgid "Micronesia"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:75
+#: template-parts/part-mortgage-calc.php:595
+#: template-parts/part-new-mortgage-page-top-block.php:79
+#: template-parts/part-simple-mortgage-calc.php:52
+msgid "Min Value"
+msgstr ""
+
+#: libs/front.php:120
+msgid "Moldova"
+msgstr ""
+
+#: libs/front.php:121
+msgid "Monaco"
+msgstr ""
+
+#: libs/front.php:122
+msgid "Mongolia"
+msgstr ""
+
+#: libs/front.php:123
+msgid "Montenegro"
+msgstr ""
+
+#: libs/front.php:252
+msgid "Month"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:96
+msgid "Monthly Mortgage Payment"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:11
+msgid "Monthly mortgage payment — CZK"
+msgstr ""
+
+#: template-thank-you-page.php:171 template-parts/part-loans-calc.php:192
+#: template-parts/part-loans-calc.php:381
+#: template-parts/part-loans-calc.php:570
+#: template-parts/part-housing-renovation-calc.php:167
+#: template-parts/part-refinancing-page-top-block.php:244
+#: template-parts/part-mortgage-calc.php:274
+#: template-parts/part-mortgage-calc.php:526
+#: template-parts/part-mortgage-calc.php:794
+#: template-parts/part-mortgage-calc.php:981
+#: template-parts/part-personal-loan-page-top-block.php:199
+#: template-parts/part-new-mortgage-page-top-block.php:278
+#: template-parts/part-simple-mortgage-calc.php:223
+msgid "Monthly payment"
+msgstr ""
+
+#: front-page.php:346 template-parts/part-reviews.php:65
+msgid "Monthly Repayment"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:145
+msgid "Monthly repayments"
+msgstr ""
+
+#: single-articles.php:93 front-page.php:429
+msgid "More Articles"
+msgstr ""
+
+#: libs/front.php:124
+msgid "Morocco"
+msgstr ""
+
+#: template-watchdog.php:48 template-parts/part-mortgage-rent-calc.php:5
+#: template-parts/part-mortgage-rent-calc.php:151
+#: template-parts/part-mortgage-rent-calc.php:204
+#: template-parts/part-documents.php:3
+msgid "Mortgage"
+msgstr ""
+
+#: template-parts/part-investment.php:30
+msgid "Mortgage as an Investment"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:40
+msgid "Mortgage duration — Years"
+msgstr ""
+
+#: template-parts/part-links.php:47
+msgid "Mortgage Investment Calculator"
+msgstr ""
+
+#: template-parts/part-rent.php:30
+msgid "Mortgage vs. Rent"
+msgstr ""
+
+#: template-parts/part-breadcrumbs.php:3
+msgid "Mortgages"
+msgstr ""
+
+#: libs/front.php:125
+msgid "Mozambique"
+msgstr ""
+
+#: libs/front.php:126
+msgid "Myanmar (Burma)"
+msgstr ""
+
+#: template-watchdog.php:97
+msgid "Name"
+msgstr ""
+
+#: libs/front.php:127
+msgid "Namibia"
+msgstr ""
+
+#: libs/front.php:128
+msgid "Nauru"
+msgstr ""
+
+#: libs/front.php:129
+msgid "Nepal"
+msgstr ""
+
+#: libs/front.php:130
+msgid "Netherlands"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:14
+msgid "New Mortgage"
+msgstr ""
+
+#: template-watchdog.php:55
+msgid "New mortgage"
+msgstr ""
+
+#: libs/front.php:131
+msgid "New Zealand"
+msgstr ""
+
+#: libs/front.php:132
+msgid "Nicaragua"
+msgstr ""
+
+#: libs/front.php:133
+msgid "Niger"
+msgstr ""
+
+#: libs/front.php:134
+msgid "Nigeria"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:291
+msgid "No"
+msgstr ""
+
+#: libs/front.php:135
+msgid "North Macedonia (formerly Macedonia)"
+msgstr ""
+
+#: libs/front.php:136
+msgid "Norway"
+msgstr ""
+
+#: libs/front.php:263 libs/front.php:293
+msgid "November"
+msgstr ""
+
+#: libs/front.php:262 libs/front.php:292
+msgid "October"
+msgstr ""
+
+#: libs/front.php:137
+msgid "Oman"
+msgstr ""
+
+#: template-parts/part-links.php:42
+msgid "Our Strengths"
+msgstr ""
+
+#: 404.php:12
+msgid "Page not found"
+msgstr ""
+
+#: libs/front.php:138
+msgid "Pakistan"
+msgstr ""
+
+#: libs/front.php:139
+msgid "Palau"
+msgstr ""
+
+#: libs/front.php:140
+msgid "Panama"
+msgstr ""
+
+#: libs/front.php:141
+msgid "Papua New Guinea"
+msgstr ""
+
+#: libs/front.php:142
+msgid "Paraguay"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:14
+msgid "Personal Loan"
+msgstr ""
+
+#: template-watchdog.php:69
+msgid "Personal loan"
+msgstr ""
+
+#: libs/front.php:143
+msgid "Peru"
+msgstr ""
+
+#: libs/front.php:144
+msgid "Philippines"
+msgstr ""
+
+#: template-watchdog.php:111
+msgid "Phone"
+msgstr ""
+
+#: single-articles.php:41 single-articles.php:53 single-articles.php:73
+#: template-contact.php:63 front-page.php:62 front-page.php:94
+#: front-page.php:137 front-page.php:319 front-page.php:409
+#: archive-articles.php:39 template-thank-you-page.php:47
+#: template-thank-you-page.php:66 header.php:41 header.php:47 header.php:95
+#: template-about.php:27 template-about.php:34 template-about.php:45
+#: template-about.php:80 template-about.php:102 template-login.php:30
+#: footer.php:8 footer.php:21 template-parts/part-why.php:17
+#: template-parts/part-feedback.php:22 template-parts/part-about.php:36
+#: template-parts/part-partners.php:13 template-parts/part-top-block.php:39
+#: template-parts/part-top-block.php:52
+#: template-parts/part-calculators-list-top-block.php:45
+#: template-parts/part-cost.php:42 template-parts/part-examples.php:24
+#: template-parts/part-reviews.php:38 template-parts/part-how-work.php:15
+msgid "photo"
+msgstr ""
+
+#: libs/front.php:145
+msgid "Poland"
+msgstr ""
+
+#: libs/front.php:146
+msgid "Portugal"
+msgstr ""
+
+#: template-parts/part-login-email.php:25
+msgid "privacy policy"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:9
+#: template-parts/part-refinancing-page-top-block.php:36
+#: template-parts/part-mortgage-calc.php:32
+#: template-parts/part-mortgage-calc.php:319
+#: template-parts/part-mortgage-calc.php:552
+#: template-parts/part-new-mortgage-page-top-block.php:36
+#: template-parts/part-simple-mortgage-calc.php:9
+msgid "Property price — CZK"
+msgstr ""
+
+#: libs/front.php:147
+msgid "Qatar"
+msgstr ""
+
+#: single-articles.php:65
+msgid "Read next"
+msgstr ""
+
+#: template-contact.php:32
+msgid "Ready to assist you with any queries"
+msgstr ""
+
+#: footer.php:12
+msgid ""
+"Ready to enhance your financial future? Start with Finaram for transparent, "
+"personalized financial solutions."
+msgstr ""
+
+#: template-watchdog.php:59 template-parts/part-mortgage-calc.php:17
+msgid "Refinancing"
+msgstr ""
+
+#: template-watchdog.php:77 template-parts/part-loans-calc.php:20
+msgid "Refinancing & Consolidation"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:72
+#: template-parts/part-mortgage-rent-calc.php:161
+msgid "Rent"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:107
+#: template-parts/part-mortgage-investment-calc.php:160
+msgid "Rent increase — % (optional)"
+msgstr ""
+
+#: template-thank-you-page.php:50 template-thank-you-page.php:69
+#: template-login.php:33
+msgid "Return to Homepage"
+msgstr ""
+
+#: libs/front.php:148
+msgid "Romania"
+msgstr ""
+
+#: template-thank-you-page.php:154 template-parts/part-loans-calc.php:168
+#: template-parts/part-loans-calc.php:357
+#: template-parts/part-loans-calc.php:546
+#: template-parts/part-housing-renovation-calc.php:143
+#: template-parts/part-refinancing-page-top-block.php:199
+#: template-parts/part-mortgage-calc.php:229
+#: template-parts/part-mortgage-calc.php:481
+#: template-parts/part-mortgage-calc.php:749
+#: template-parts/part-mortgage-calc.php:957
+#: template-parts/part-personal-loan-page-top-block.php:175
+#: template-parts/part-new-mortgage-page-top-block.php:233
+#: template-parts/part-simple-mortgage-calc.php:178
+msgid "RPSN"
+msgstr ""
+
+#: libs/front.php:149
+msgid "Russia"
+msgstr ""
+
+#: libs/front.php:150
+msgid "Rwanda"
+msgstr ""
+
+#: libs/front.php:151
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: libs/front.php:152
+msgid "Saint Lucia"
+msgstr ""
+
+#: libs/front.php:153
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: libs/front.php:154
+msgid "Samoa"
+msgstr ""
+
+#: template-parts/part-links.php:32
+msgid "Sample Documents"
+msgstr ""
+
+#: libs/front.php:155
+msgid "San Marino"
+msgstr ""
+
+#: libs/front.php:156
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: libs/front.php:157
+msgid "Saudi Arabia"
+msgstr ""
+
+#: template-parts/part-login-email.php:28
+msgid "Send Code"
+msgstr ""
+
+#: libs/front.php:158
+msgid "Senegal"
+msgstr ""
+
+#: libs/front.php:261 libs/front.php:291
+msgid "September"
+msgstr ""
+
+#: libs/front.php:159
+msgid "Serbia"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:4
+msgid "Set up what your loan could look like"
+msgstr ""
+
+#: libs/front.php:160
+msgid "Seychelles"
+msgstr ""
+
+#: front-page.php:256 front-page.php:258 template-parts/part-why.php:136
+#: template-parts/part-why.php:138
+msgid "Show more benefits"
+msgstr ""
+
+#: libs/front.php:161
+msgid "Sierra Leone"
+msgstr ""
+
+#: template-parts/part-simple-mortgage.php:30
+msgid "Simple Mortgage"
+msgstr ""
+
+#: libs/front.php:162
+msgid "Singapore"
+msgstr ""
+
+#: libs/front.php:163
+msgid "Slovakia"
+msgstr ""
+
+#: libs/front.php:164
+msgid "Slovenia"
+msgstr ""
+
+#: libs/front.php:165
+msgid "Solomon Islands"
+msgstr ""
+
+#: libs/front.php:166
+msgid "Somalia"
+msgstr ""
+
+#: libs/front.php:167
+msgid "South Africa"
+msgstr ""
+
+#: libs/front.php:168
+msgid "South Sudan"
+msgstr ""
+
+#: libs/front.php:169
+msgid "Spain"
+msgstr ""
+
+#: libs/front.php:170
+msgid "Sri Lanka"
+msgstr ""
+
+#: template-parts/part-mortgage-calc.php:4
+msgid "Start with a mortgage calculator"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:78
+msgid "Starting rent — CZK"
+msgstr ""
+
+#: template-thank-you-page.php:73 template-thank-you-page.php:80
+msgid "STEP 1"
+msgstr ""
+
+#: template-thank-you-page.php:75 template-thank-you-page.php:82
+msgid "STEP 2"
+msgstr ""
+
+#: template-thank-you-page.php:52
+msgid "STEP 3"
+msgstr ""
+
+#: libs/front.php:171
+msgid "Sudan"
+msgstr ""
+
+#: libs/front.php:172
+msgid "Suriname"
+msgstr ""
+
+#: libs/front.php:173
+msgid "Sweden"
+msgstr ""
+
+#: libs/front.php:174
+msgid "Switzerland"
+msgstr ""
+
+#: libs/front.php:175
+msgid "Syria"
+msgstr ""
+
+#: libs/front.php:176
+msgid "Taiwan"
+msgstr ""
+
+#: libs/front.php:177
+msgid "Tajikistan"
+msgstr ""
+
+#: libs/front.php:178
+msgid "Tanzania"
+msgstr ""
+
+#: template-parts/part-login-email.php:23
+msgid "terms and conditions"
+msgstr ""
+
+#: libs/front.php:179
+msgid "Thailand"
+msgstr ""
+
+#: template-thank-you-page.php:249
+msgid "Thank you for submitting the application!"
+msgstr ""
+
+#: template-parts/part-loans-calc.php:407
+msgid "The amount of loan left to be paid — CZK"
+msgstr ""
+
+#: template-parts/part-refinancing-page-top-block.php:53
+#: template-parts/part-mortgage-calc.php:336
+msgid "The amount of mortgage left to be paid — CZK"
+msgstr ""
+
+#: template-parts/part-login-email.php:5
+msgid ""
+"To confirm your registration, please enter your email address and we will "
+"send you an email with a confirmation code."
+msgstr ""
+
+#: libs/front.php:180
+msgid "Togo"
+msgstr ""
+
+#: libs/front.php:181
+msgid "Tonga"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:171
+msgid "Total payment"
+msgstr ""
+
+#: template-thank-you-page.php:122 template-parts/part-loans-calc.php:126
+#: template-parts/part-loans-calc.php:315
+#: template-parts/part-loans-calc.php:504
+#: template-parts/part-housing-renovation-calc.php:101
+#: template-parts/part-refinancing-page-top-block.php:157
+#: template-parts/part-mortgage-calc.php:187
+#: template-parts/part-mortgage-calc.php:439
+#: template-parts/part-mortgage-calc.php:707
+#: template-parts/part-mortgage-calc.php:915
+#: template-parts/part-personal-loan-page-top-block.php:133
+#: template-parts/part-new-mortgage-page-top-block.php:191
+#: template-parts/part-simple-mortgage-calc.php:136
+msgid "Total payment amount"
+msgstr ""
+
+#: libs/front.php:182
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: libs/front.php:183
+msgid "Tunisia"
+msgstr ""
+
+#: libs/front.php:184
+msgid "Turkey"
+msgstr ""
+
+#: libs/front.php:185
+msgid "Turkmenistan"
+msgstr ""
+
+#: libs/front.php:186
+msgid "Tuvalu"
+msgstr ""
+
+#: template-thank-you-page.php:98
+msgid "Type"
+msgstr ""
+
+#: libs/front.php:187
+msgid "Uganda"
+msgstr ""
+
+#: libs/front.php:188
+msgid "Ukraine"
+msgstr ""
+
+#: libs/front.php:189
+msgid "United Arab Emirates"
+msgstr ""
+
+#: libs/front.php:190
+msgid "United Kingdom"
+msgstr ""
+
+#: libs/front.php:191
+msgid "United States"
+msgstr ""
+
+#: libs/front.php:192
+msgid "Uruguay"
+msgstr ""
+
+#: libs/front.php:193
+msgid "Uzbekistan"
+msgstr ""
+
+#: libs/front.php:194
+msgid "Vanuatu"
+msgstr ""
+
+#: libs/front.php:195
+msgid "Vatican City"
+msgstr ""
+
+#: libs/front.php:196
+msgid "Venezuela"
+msgstr ""
+
+#: libs/front.php:197
+msgid "Vietnam"
+msgstr ""
+
+#: template-contact.php:49
+msgid "Visit us"
+msgstr ""
+
+#: template-thank-you-page.php:258
+msgid "We will contact you and provide feedback within two business days."
+msgstr ""
+
+#: libs/front.php:272
+msgid "Year"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:248
+msgid "years"
+msgstr ""
+
+#: libs/front.php:198
+msgid "Yemen"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:290
+msgid "Yes"
+msgstr ""
+
+#: template-thank-you-page.php:55
+msgid "You have completed the third stage of the application."
+msgstr ""
+
+#: 404.php:15
+msgid "You've reached a page that doesn't exist."
+msgstr ""
+
+#: template-thank-you-page.php:253
+msgid "Your application is being processed"
+msgstr ""
+
+#: template-watchdog.php:33
+msgid "Your application was sent"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:191
+#: template-parts/part-mortgage-rent-calc.php:193
+msgid "Your benefit"
+msgstr ""
+
+#: template-parts/part-mortgage-rent-calc.php:192
+msgid "Your loss"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:254
+msgid "Your net gain with a mortgage is"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:253
+msgid "Your net loss with a mortgage is"
+msgstr ""
+
+#: template-parts/part-mortgage-investment-calc.php:264
+msgid "Your net loss with rent payments is"
+msgstr ""
+
+#: libs/front.php:199
+msgid "Zambia"
+msgstr ""
+
+#: libs/front.php:200
+msgid "Zimbabwe"
+msgstr ""

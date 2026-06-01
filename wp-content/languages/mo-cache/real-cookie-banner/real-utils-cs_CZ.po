@@ -1,0 +1,234 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: n/a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: n/a\n"
+"PO-Revision-Date: 2024-04-25 12:39+0000\n"
+"Last-Translator: Matthias Günter <matthias.guenter@devowl.io>\n"
+"Language-Team: Czech <https://translate.devowl.io/projects/devowl-wp-real-"
+"utils-backend-php/develop/cs/>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.4.3\n"
+
+#: cross/CrossRealCategoryLibrary.php:50
+msgid "Do you manage many categories?"
+msgstr "Spravujete mnoho kategorií?"
+
+#: cross/CrossRealCategoryLibrary.php:52
+msgid ""
+"Do you still create your categories this way? Get an explorer-like tree view "
+"directly in your posts/page tables!"
+msgstr ""
+"Stále vytváříte kategorie tímto způsobem? Využijte stromové zobrazení "
+"podobné tomu v průzkumníku přímo v tabulkách příspěvků/stránek!"
+
+#: cross/CrossRealCategoryLibrary.php:59
+msgid "Manage product categories/attributes?"
+msgstr "Spravovat kategorie/atributy produktů?"
+
+#: cross/CrossRealCategoryLibrary.php:61
+msgid ""
+"Do you still create your product categories and attributes this way? Get an "
+"explorer-like tree view directly into your WooCommerce products table!"
+msgstr ""
+"Stále vytváříte kategorie a atributy produktů tímto způsobem? Získejte "
+"možnost stromového zobrazení jako v průzkumníku přímo v tabulce produktů "
+"WooCommerce!"
+
+#: cross/CrossRealCategoryLibrary.php:68
+msgid "Paginate without reload?"
+msgstr "Zobrazování stránek bez opakovaného načítání?"
+
+#: cross/CrossRealCategoryLibrary.php:70
+msgid ""
+"Do you want to paginate through your posts and pages without having to "
+"reload the complete page?"
+msgstr ""
+"Chcete stránkovat příspěvky a stránky, aniž byste museli načítat celou "
+"stránku?"
+
+#: cross/CrossRealCategoryLibrary.php:77
+msgid "Assigning much faster?"
+msgstr "Mnohem rychlejší přiřazování?"
+
+#: cross/CrossRealCategoryLibrary.php:79
+msgid ""
+"You can move or insert a post or page directly into a category without "
+"having to deal with checkboxes."
+msgstr ""
+"Příspěvek nebo stránku můžete přesunout nebo vložit přímo do kategorie, aniž "
+"byste se museli zaobírat zaškrtávacími políčky."
+
+#: cross/CrossRealCookieBanner.php:88
+msgid "Is your website GDPR compliant?"
+msgstr "Jsou vaše webové stránky v souladu s GDPR?"
+
+#: cross/CrossRealCookieBanner.php:89
+msgid "cookie-banner-frontend.png"
+msgstr "cookie-banner-frontend.png"
+
+#: cross/CrossRealCookieBanner.php:90
+msgid ""
+"Websites targeting EU users and setting non-essential cookies need an opt-in "
+"cookie banner. We recommend Real Cookie Banner as an ePrivacy Policy and "
+"GDPR compliant solution for WordPress."
+msgstr ""
+"Webové stránky, zaměřené na uživatele z EU, které nastavují jiné než "
+"nezbytné soubory cookie, potřebují banner s možností souhlasu s používáním "
+"souborů cookie. Doporučujeme Real Cookie Banner jako řešení pro WordPress, "
+"které je v souladu se zásadami ePrivacy a GDPR."
+
+#: cross/CrossRealCookieBanner.php:94
+msgid "https://devowl.io/go/real-cookie-banner?source=cross-rcb"
+msgstr "https://devowl.io/go/real-cookie-banner?source=cross-rcb"
+
+#: cross/CrossRealMediaLibrary.php:49
+msgid "File finally found?"
+msgstr "Soubor konečně nalezen?"
+
+#: cross/CrossRealMediaLibrary.php:51
+msgid ""
+"Your WordPress site will certainly continue to grow. Organize your media "
+"library with folders!"
+msgstr ""
+"Vaše stránky WordPress budou určitě dále růst. Zorganizujte svou "
+"multimediální knihovnu pomocí složek!"
+
+#: cross/CrossRealMediaLibrary.php:58
+msgid "Does it take long to find a file?"
+msgstr "Trvá vyhledání souboru dlouho?"
+
+#: cross/CrossRealMediaLibrary.php:60
+msgid ""
+"Inserting media into a post or page can be stressful. Use folders to "
+"organize your media library!"
+msgstr ""
+"Vkládání médií do příspěvku nebo stránky bývá namáhavé. K uspořádání "
+"knihovny médií používejte složky!"
+
+#: cross/CrossRealPhysicalMedia.php:47 cross/CrossRealPhysicalMedia.php:56
+msgid "Did you know that?"
+msgstr "Věděli jste to?"
+
+#: cross/CrossRealPhysicalMedia.php:49 cross/CrossRealPhysicalMedia.php:58
+msgid ""
+"Your uploads can say more than a thousand words. Unfortunately, search "
+"engines do not understand the content of images, for example. Organize your "
+"uploads directly in meaningful folder names and achieve a better ranking in "
+"search engines!"
+msgstr ""
+"Vaše příspěvky mohou říct více než tisíc slov. Vyhledávače bohužel nerozumí "
+"například obsahu obrázků. Uspořádejte své nahrané soubory přímo do "
+"výstižných názvů složek a dosáhněte lepšího umístění ve vyhledávačích!"
+
+#: Service.php:140
+msgid "No such plugin slug available."
+msgstr "Žádný takový plugin slug není k dispozici."
+
+#: Service.php:192
+msgid "The abstract implementation for your slug could not be found."
+msgstr "Nepodařilo se nalézt abstraktní implementaci vašeho slugu."
+
+#. translators:
+#: view/Options.php:48
+#, php-format
+msgid "Products of %s"
+msgstr "Produkty %s"
+
+#. translators:
+#: view/Options.php:67
+#, php-format
+msgid ""
+"Show advertising for not yet installed %s products in the WordPress backend"
+msgstr ""
+"Zobrazit reklamu na dosud nenainstalované %s produkty v backendu WordPress"
+
+#: WelcomePage.php:62
+msgid "Learn more about this plugin"
+msgstr "Další informace o tomto pluginu"
+
+#: WelcomePage.php:69 WelcomePage.php:166
+msgid "Support"
+msgstr "Podpora"
+
+#: WelcomePage.php:74 WelcomePage.php:169
+msgid "Rate plugin"
+msgstr "Hodnotit plugin"
+
+#: WelcomePage.php:158
+msgid "Version"
+msgstr "Verze"
+
+#: WelcomePage.php:163
+msgid "Info"
+msgstr "Informace"
+
+#: WelcomePage.php:177
+msgid "Key feature"
+msgid_plural "Key features"
+msgstr[0] "Klíčová funkce"
+msgstr[1] "Klíčové funkce"
+msgstr[2] "Klíčových funkcí"
+
+#: WelcomePage.php:253
+msgid "Additional plugins by devowl.io"
+msgstr "Další pluginy od devowl.io"
+
+#: WelcomePage.php:334
+msgid "Available in"
+msgstr "Dostupné v"
+
+#~ msgid "You must agree to our privacy policy to continue."
+#~ msgstr ""
+#~ "Chcete-li pokračovat, musíte souhlasit s našimi zásadami ochrany osobních "
+#~ "údajů."
+
+#~ msgid "Newsletter"
+#~ msgstr "Newsletter"
+
+#~ msgid ""
+#~ "Receive the latest news about devowl.io WordPress plugins directly in "
+#~ "your inbox"
+#~ msgstr ""
+#~ "Dostávejte nejnovější zprávy o pluginech devowl.io pro WordPress přímo do "
+#~ "své e-mailové schránky"
+
+#~ msgid "Enter your email..."
+#~ msgstr "Zadejte svůj e-mail..."
+
+#~ msgctxt "legal-text"
+#~ msgid ""
+#~ "I hereby consent to the processing of my data by devowl.io GmbH for the "
+#~ "purpose of sending the newsletter. The consent can be revoked at any time "
+#~ "with effect for the future by clicking on the \"Unsubscribe\" button or "
+#~ "by e-mail."
+#~ msgstr ""
+#~ "Tímto souhlasím se zpracováním svých údajů společností devowl.io GmbH za "
+#~ "účelem zasílání newsletteru. Souhlas lze kdykoli odvolat s účinností do "
+#~ "budoucna kliknutím na tlačítko \"Odhlásit\" nebo e-mailem."
+
+#~ msgctxt "legal-text"
+#~ msgid ""
+#~ "Information on the processing of your personal data can be found in our "
+#~ "<a %s>privacy policy</a>."
+#~ msgstr ""
+#~ "Informace o zpracování vašich osobních údajů naleznete v našich <a "
+#~ "%s>zásadách ochrany osobních údajů</a>."
+
+#~ msgid "https://devowl.io/privacy-policy/"
+#~ msgstr "https://devowl.io/privacy-policy/"
+
+#~ msgid "Subscribe"
+#~ msgstr "Odebírat"
+
+#~ msgctxt "legal-text"
+#~ msgid ""
+#~ "I want to receive WordPress news from devowl.io via email and agree to "
+#~ "the <a %s>privacy policy</a>."
+#~ msgstr ""
+#~ "Chci dostávat novinky o WordPressu z devowl.io e-mailem a souhlasím se <a "
+#~ "%s>zásadami ochrany osobních údajů</a>."
