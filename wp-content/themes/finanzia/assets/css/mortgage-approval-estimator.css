@@ -417,3 +417,34 @@
   outline: 2px solid var(--mae-text);
   outline-offset: 3px;
 }
+
+/*
+ * Homepage hero — same two-column layout as /estimator/, centered on the page.
+ * Only overrides legacy .top-section flex + asymmetric padding.
+ */
+.wrapper .top-section.mae-hero-replacement {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: var(--mae-surface, #f1efe8);
+  justify-content: unset !important;
+  flex-wrap: unset !important;
+}
+
+.wrapper .top-section.mae-hero-replacement .mae {
+  width: 100%;
+}
+
+.wrapper .top-section.mae-hero-replacement .mae__inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .wrapper .top-section.mae-hero-replacement .mae__layout {
+    justify-content: center;
+  }
+}

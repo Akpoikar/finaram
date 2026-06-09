@@ -33,7 +33,7 @@ $cta_class   = esc_attr($args['cta_class']);
     class="mae"
     id="mae-widget"
     data-mae-widget
-    aria-label="<?php esc_attr_e('Mortgage approval estimator', 'finanzia'); ?>"
+    aria-label="<?php echo esc_attr(finaram_mae_t('Mortgage approval estimator', 'Odhad schválení hypotéky')); ?>"
 >
     <div class="mae__inner">
         <div class="mae__layout">
@@ -63,7 +63,7 @@ $cta_class   = esc_attr($args['cta_class']);
                     <div class="mae__steps" data-mae-steps></div>
 
                     <div class="mae__final" data-mae-final hidden>
-                        <p class="mae__final-label"><?php esc_html_e('Your estimated approval probability', 'finanzia'); ?></p>
+                        <p class="mae__final-label"><?php echo esc_html(finaram_mae_t('Your estimated approval probability', 'Vaše odhadovaná pravděpodobnost schválení')); ?></p>
                         <p class="mae__final-score" data-mae-final-score>50%</p>
                         <a
                             href="<?php echo $cta_url; ?>"
@@ -74,7 +74,7 @@ $cta_class   = esc_attr($args['cta_class']);
                 </div>
             </div>
 
-            <aside class="mae__aside" aria-label="<?php esc_attr_e('Approval probability indicator', 'finanzia'); ?>">
+            <aside class="mae__aside" aria-label="<?php echo esc_attr(finaram_mae_t('Approval probability indicator', 'Ukazatel pravděpodobnosti schválení')); ?>">
                 <div class="mae__gauge mae__gauge--desktop" data-mae-gauge-desktop>
                     <?php finaram_mae_render_gauge_svg(); ?>
                 </div>

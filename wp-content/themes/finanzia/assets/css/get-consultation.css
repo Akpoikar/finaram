@@ -1,0 +1,75 @@
+/**
+ * Get Consultation page — form block within full site layout.
+ */
+
+.consult-page-wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 32px 20px 72px;
+}
+
+@media (min-width: 768px) {
+  .consult-page-wrap {
+    padding: 48px 40px 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .consult-page-wrap {
+    padding: 56px 86px 120px;
+  }
+}
+
+.consult-page {
+  width: 100%;
+  max-width: 720px;
+  margin: 32px auto 0;
+}
+
+.consult-page__layout {
+  display: flex;
+  justify-content: center;
+}
+
+.consult-page__panel {
+  width: 100%;
+  background: #101010;
+  color: #fff;
+  border-radius: 16px;
+  padding: 40px 32px 36px;
+  box-shadow: 0 8px 32px rgba(16, 16, 16, 0.12);
+}
+
+@media (min-width: 768px) {
+  .consult-page__panel {
+    padding: 48px 48px 40px;
+  }
+}
+
+.consult-page__title {
+  margin: 0 0 12px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.consult-page__description {
+  margin: 0 0 28px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 42ch;
+}
+
+.consult-page__form {
+  width: 100%;
+}
+
+.consult-page__cf7 .contacts__row + .contacts__row {
+  margin-top: 16px;
+}
+
+.consult-page__cf7 .contacts__buttons {
+  margin-top: 24px;
+}

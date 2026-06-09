@@ -2,7 +2,7 @@
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.1.34');
+    define('_S_VERSION', '1.1.43');
 }
 
 require_once __DIR__ . '/libs/theme.php';
@@ -16,6 +16,9 @@ require_once __DIR__ . '/libs/phpThumb/phpthumb.class.php';
 
 // Settings for theme
 require_once __DIR__ . '/libs/settings.php';
+
+// Standalone Get Consultation page
+require_once __DIR__ . '/libs/get-consultation.php';
 
 // Mortgage approval estimator widget
 require_once __DIR__ . '/libs/mortgage-approval-estimator.php';
@@ -305,13 +308,192 @@ function validate_and_sanitize_text($data)
     return $data;
 }
 
-add_filter('wpcf7_form_tag_data_option', function ($n, $options, $args) {
-    if (in_array('list_of_questions', $options)) {
-        $option_fields = get_fields('option');
-        return array_column($option_fields['list_of_questions'], 'question');
+/**
+ * Normalize CF7 select option values for consistent render + validation.
+ */
+function finaram_normalize_cf7_option($value)
+{
+    return html_entity_decode(
+        trim(wp_strip_all_tags((string) $value)),
+        ENT_QUOTES | ENT_HTML5,
+        'UTF-8'
+    );
+}
+
+/**
+ * "Na co se chcete zeptat?" options from ACF (WPML-aware).
+ *
+ * @return string[]
+ */
+function finaram_get_cf7_list_of_questions()
+{
+    static $cache = array();
+
+    $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : 'default';
+    if (isset($cache[$lang])) {
+        return $cache[$lang];
     }
-    return null;
+
+    $acf_lang_filter = null;
+    if (defined('ICL_LANGUAGE_CODE')) {
+        $acf_lang_filter = static function () {
+            return ICL_LANGUAGE_CODE;
+        };
+        add_filter('acf/settings/current_language', $acf_lang_filter, 100);
+    }
+
+    $option_fields = get_fields('option');
+
+    if ($acf_lang_filter) {
+        remove_filter('acf/settings/current_language', $acf_lang_filter, 100);
+    }
+
+    if (
+        ! is_array($option_fields)
+        || empty($option_fields['list_of_questions'])
+        || ! is_array($option_fields['list_of_questions'])
+    ) {
+        $cache[$lang] = array();
+        return $cache[$lang];
+    }
+
+    $questions = array();
+    foreach ($option_fields['list_of_questions'] as $row) {
+        if (empty($row['question'])) {
+            continue;
+        }
+        $question = finaram_normalize_cf7_option($row['question']);
+        if ($question !== '') {
+            $questions[] = $question;
+        }
+    }
+
+    $cache[$lang] = array_values(array_unique($questions));
+
+    return $cache[$lang];
+}
+
+/**
+ * Allowed values for a dynamic CF7 select using data:list_of_questions.
+ *
+ * @param WPCF7_FormTag $tag
+ * @return string[]
+ */
+function finaram_cf7_get_select_accept_values($tag)
+{
+    $values = array_merge(
+        (array) $tag->values,
+        finaram_get_cf7_list_of_questions()
+    );
+
+    if ($tag->has_option('first_as_label')) {
+        $values = array_slice($values, 1);
+    }
+
+    $values = array_map('finaram_normalize_cf7_option', $values);
+
+    return array_values(array_filter(array_unique($values), static function ($value) {
+        return $value !== '';
+    }));
+}
+
+add_filter('wpcf7_form_tag_data_option', function ($n, $options, $args) {
+    if (in_array('list_of_questions', (array) $options, true)) {
+        return finaram_get_cf7_list_of_questions();
+    }
+    return $n;
 }, 10, 3);
+
+/**
+ * CF7 enum validation can miss ACF-driven options (WPML / dynamic data).
+ * Replace enum rules for list_of_questions selects with the live option list.
+ */
+add_action('wpcf7_swv_create_schema', function ($schema, $contact_form) {
+    $dynamic_tags = array();
+
+    foreach ($contact_form->scan_form_tags(array('basetype' => array('select'))) as $tag) {
+        if (in_array('list_of_questions', (array) $tag->get_option('data'), true)) {
+            $dynamic_tags[$tag->name] = $tag;
+        }
+    }
+
+    if (empty($dynamic_tags)) {
+        return;
+    }
+
+    $reflection = new ReflectionClass($schema);
+    $rules_prop = $reflection->getProperty('rules');
+    $rules_prop->setAccessible(true);
+    $rules      = $rules_prop->getValue($schema);
+
+    $filtered_rules = array();
+    foreach ($rules as $rule) {
+        if ($rule instanceof \Contactable\SWV\EnumRule) {
+            $field = $rule->get_property('field');
+            if (isset($dynamic_tags[$field])) {
+                continue;
+            }
+        }
+        $filtered_rules[] = $rule;
+    }
+
+    foreach ($dynamic_tags as $name => $tag) {
+        $accept = finaram_cf7_get_select_accept_values($tag);
+        if (empty($accept)) {
+            continue;
+        }
+
+        $filtered_rules[] = wpcf7_swv_create_rule('enum', array(
+            'field'  => $name,
+            'accept' => $accept,
+            'error'  => $contact_form->filter_message(
+                __('Undefined value was submitted through this field.', 'contact-form-7')
+            ),
+        ));
+    }
+
+    $rules_prop->setValue($schema, $filtered_rules);
+}, 25, 2);
+
+/**
+ * Fallback: if enum validation still rejects a valid ACF option, clear the error.
+ *
+ * @param WPCF7_Validation $result
+ * @param WPCF7_FormTag    $tag
+ * @return WPCF7_Validation
+ */
+function finaram_cf7_clear_select_validation_if_allowed($result, $tag)
+{
+    if (empty($tag->name) || $result->is_valid($tag->name)) {
+        return $result;
+    }
+
+    if (! isset($_POST[$tag->name])) {
+        return $result;
+    }
+
+    $submitted = finaram_normalize_cf7_option(wp_unslash($_POST[$tag->name]));
+    $accept    = finaram_cf7_get_select_accept_values($tag);
+
+    if (empty($accept)) {
+        $accept = finaram_get_cf7_list_of_questions();
+    }
+
+    if ($submitted === '' || ! in_array($submitted, $accept, true)) {
+        return $result;
+    }
+
+    $reflection = new ReflectionClass($result);
+    $property   = $reflection->getProperty('invalid_fields');
+    $property->setAccessible(true);
+    $invalid    = $property->getValue($result);
+    unset($invalid[$tag->name]);
+    $property->setValue($result, $invalid);
+
+    return $result;
+}
+add_filter('wpcf7_validate_select', 'finaram_cf7_clear_select_validation_if_allowed', 30, 2);
+add_filter('wpcf7_validate_select*', 'finaram_cf7_clear_select_validation_if_allowed', 30, 2);
 
 add_filter('wpcf7_form_hidden_fields', 'cf7_add_extras');
 

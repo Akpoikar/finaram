@@ -1,6 +1,6 @@
 /**
  * Mortgage Approval Estimator — vanilla JS, no dependencies.
- * One question at a time; updates SVG gauge and score after each answer.
+ * Copy and questions are injected via finaramMaeConfig (PHP / WPML).
  */
 (function () {
   'use strict';
@@ -9,11 +9,11 @@
   var BASE_SCORE = toNum(CONFIG.baseScore, 50);
   var MIN_SCORE = toNum(CONFIG.minScore, 0);
   var MAX_SCORE = toNum(CONFIG.maxScore, 97);
+  var LABEL_BACK = CONFIG.labelBack || 'Back';
 
   var GAUGE_CIRCUMFERENCE = 2 * Math.PI * 88;
-  var STEP_COUNT = 5;
 
-  var QUESTIONS = [
+  var DEFAULT_QUESTIONS = [
     {
       id: 'ltv',
       label: 'Step 1 of 5',
@@ -72,6 +72,12 @@
     },
   ];
 
+  var QUESTIONS = Array.isArray(CONFIG.questions) && CONFIG.questions.length
+    ? CONFIG.questions
+    : DEFAULT_QUESTIONS;
+
+  var STEP_COUNT = toNum(CONFIG.stepCount, QUESTIONS.length);
+
   function toNum(value, fallback) {
     var n = Number(value);
     return isFinite(n) ? n : fallback;
@@ -82,11 +88,6 @@
     return Math.max(MIN_SCORE, Math.min(MAX_SCORE, n));
   }
 
-  /**
-   * Raw score from answers (before clamp).
-   * @param {Record<string, string>} answers
-   * @returns {number}
-   */
   function calculateRawScore(answers) {
     var score = BASE_SCORE;
 
@@ -177,6 +178,10 @@
     return clampScore(calculateRawScore(answers));
   }
 
+  function backButtonHtml() {
+    return '<button type="button" class="mae__back" data-mae-back>&larr; ' + escapeHtml(LABEL_BACK) + '</button>';
+  }
+
   function MortgageApprovalEstimator(root) {
     this.root = root;
     this.answers = {};
@@ -189,7 +194,6 @@
     this.finalEl = root.querySelector('[data-mae-final]');
     this.progressBar = root.querySelector('[data-mae-progress-bar]');
     this.finalScoreEl = root.querySelector('[data-mae-final-score]');
-    this.questionnaireEl = root.querySelector('[data-mae-questionnaire]');
 
     this.gaugeFills = root.querySelectorAll('[data-mae-gauge-fill]');
     this.gaugeValues = root.querySelectorAll('[data-mae-gauge-value]');
@@ -246,9 +250,7 @@
 
     var html =
       '<div class="mae__step-nav">' +
-      (showBack
-        ? '<button type="button" class="mae__back" data-mae-back>&larr; Back</button>'
-        : '<span class="mae__back-spacer" aria-hidden="true"></span>') +
+      (showBack ? backButtonHtml() : '<span class="mae__back-spacer" aria-hidden="true"></span>') +
       '</div>' +
       '<span class="mae__step-label">' + escapeHtml(q.label) + '</span>' +
       '<h2 class="mae__step-question" id="mae-q-' + q.id + '">' + escapeHtml(q.question) + '</h2>' +
@@ -388,13 +390,11 @@
 
     if (this.stepsEl) {
       this.stepsEl.innerHTML =
-        '<div class="mae__step-nav">' +
-        '<button type="button" class="mae__back" data-mae-back-from-final>&larr; Back</button>' +
-        '</div>';
+        '<div class="mae__step-nav">' + backButtonHtml() + '</div>';
       this.stepsEl.hidden = false;
 
       var self = this;
-      var backBtn = this.stepsEl.querySelector('[data-mae-back-from-final]');
+      var backBtn = this.stepsEl.querySelector('[data-mae-back]');
       if (backBtn) {
         backBtn.addEventListener('click', function () {
           self.isComplete = false;

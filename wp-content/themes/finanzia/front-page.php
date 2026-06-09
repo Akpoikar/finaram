@@ -4,48 +4,31 @@ get_header();
 $fields = get_fields();
 ?>
 
-    <div class="top-section">
-        <div class="top-section__info">
-            <div class="top-section__title">
-                <?= (trim($fields['top_section_title']) != '' ? "<h1>" . $fields['top_section_title'] . "</h1>" : "") ?>
-            </div>
-            <?php if (is_countable($fields['top_section_list'])): ?>
-                <ul class="top-section__list">
-                    <?php foreach ($fields['top_section_list'] as $item) : ?>
-                        <li><?= $item['top_section_list_item'] ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <div class="top-section__buttons">
-                <?php if ($fields['left_button']['left_button_url']): ?>
-                    <a class="top-section__btn-1" href="<?= $fields['left_button']['left_button_url'] ?>"
-                       title="<?= $fields['left_button']['left_button_title'] ?>">
-                        <?= $fields['left_button']['left_button_title'] ?>
-                    </a>
-                <?php endif; ?>
-                <?php if ($fields['right_button']['right_button_title']): ?>
-                    <a class="top-section__btn-2" href="<?= $fields['right_button']['right_button_url'] ?>"
-                       title="<?= $fields['right_button']['right_button_title'] ?>">
-                        <?= $fields['right_button']['right_button_title'] ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-        </div>
-        <!--      <div class="top-section__image">-->
-        <!--        <img src="--><?php //= theme()->getThemeUrl(); ?><!--data/top-anim-3.gif" alt="">-->
-        <!--      </div>-->
-        <?php if ($fields["top_section_video"]["poster"]): ?>
-            <video autoplay="autoplay" loop="" muted="" playsinline="" webkit-playsinline="" preload="none" width="450"
-                   height="450"
-                   poster="<?= theme()->R($fields["top_section_video"]["poster"]['url'], 'f=webp&w=450'); ?>">
-                <?php if ($fields["top_section_video"]["video_webm"]): ?>
-                    <source src="<?= $fields["top_section_video"]["video_webm"]['url']; ?>" type="video/webm">
-                <?php endif; ?>
-                <?php if ($fields["top_section_video"]["video_mp4"]): ?>
-                    <source src="<?= $fields["top_section_video"]["video_mp4"]['url']; ?>" type="video/mp4">
-                <?php endif; ?>
-            </video>
-        <?php endif; ?>
+    <div class="top-section mae-hero-replacement">
+        <?php
+        $mae_args = array();
+        if (! empty(trim($fields['top_section_title'] ?? ''))) {
+            $mae_args['title'] = $fields['top_section_title'];
+        }
+        if (is_countable($fields['top_section_list'] ?? null) && count($fields['top_section_list']) > 0) {
+            $list_items = array_map(
+                static function ($item) {
+                    return $item['top_section_list_item'] ?? '';
+                },
+                $fields['top_section_list']
+            );
+            $mae_args['description'] = implode(' ', array_filter($list_items));
+        }
+        if (function_exists('finaram_get_consultation_url') && finaram_get_consultation_url()) {
+            $mae_args['cta_url'] = finaram_get_consultation_url();
+        } elseif (! empty($fields['left_button']['left_button_url'])) {
+            $mae_args['cta_url'] = $fields['left_button']['left_button_url'];
+        }
+        $mae_args['cta_text'] = function_exists('finaram_mae_t')
+            ? finaram_mae_t('Get Mortgage Consultation', 'Získat hypoteční konzultaci')
+            : __('Get Mortgage Consultation', 'finanzia');
+        finaram_render_mortgage_approval_estimator($mae_args);
+        ?>
     </div>
 <?php if ($fields['partners_enable'] && is_countable($fields['partners_slides'])): ?>
     <div class="partners-section">
@@ -66,13 +49,18 @@ $fields = get_fields();
         </div>
     </div>
 <?php endif; ?>
-<?php if ($fields['calc_enable']): ?>
-    <?php if ($fields['calc_new']): ?>
-        <?php get_template_part('template-parts/part', 'mortgage-calc-new', ['title' => $fields['calc_title'], 'subtitle' => $fields['calc_subtitle']]); ?>
-    <?php else: ?>
-        <?php get_template_part('template-parts/part', 'mortgage-calc', ['title' => $fields['calc_title'], 'subtitle' => $fields['calc_subtitle']]); ?>
-    <?php endif; ?>
-<?php endif; ?>
+<?php
+/*
+ * Temporarily hidden: "Navigate Your Financial Path Online" calculator section.
+if ($fields['calc_enable']):
+    if ($fields['calc_new']):
+        get_template_part('template-parts/part', 'mortgage-calc-new', ['title' => $fields['calc_title'], 'subtitle' => $fields['calc_subtitle']]);
+    else:
+        get_template_part('template-parts/part', 'mortgage-calc', ['title' => $fields['calc_title'], 'subtitle' => $fields['calc_subtitle']]);
+    endif;
+endif;
+*/
+?>
 <?php if ($fields['banner_link_enable']): ?>
     <?php get_template_part('template-parts/part', 'banner-link', [
         'link'        => $fields['banner_link'],
