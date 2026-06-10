@@ -7,18 +7,6 @@ $fields = get_fields();
     <div class="top-section mae-hero-replacement">
         <?php
         $mae_args = array();
-        if (! empty(trim($fields['top_section_title'] ?? ''))) {
-            $mae_args['title'] = $fields['top_section_title'];
-        }
-        if (is_countable($fields['top_section_list'] ?? null) && count($fields['top_section_list']) > 0) {
-            $list_items = array_map(
-                static function ($item) {
-                    return $item['top_section_list_item'] ?? '';
-                },
-                $fields['top_section_list']
-            );
-            $mae_args['description'] = implode(' ', array_filter($list_items));
-        }
         if (function_exists('finaram_get_consultation_url') && finaram_get_consultation_url()) {
             $mae_args['cta_url'] = finaram_get_consultation_url();
         } elseif (! empty($fields['left_button']['left_button_url'])) {

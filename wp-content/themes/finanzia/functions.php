@@ -2,7 +2,7 @@
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.1.43');
+    define('_S_VERSION', '1.1.45');
 }
 
 require_once __DIR__ . '/libs/theme.php';
@@ -321,23 +321,104 @@ function finaram_normalize_cf7_option($value)
 }
 
 /**
- * "Na co se chcete zeptat?" options from ACF (WPML-aware).
+ * WPML language code for a CF7 form (REST submit often runs in default language).
  *
+ * @param WPCF7_ContactForm|null $contact_form
+ * @return string
+ */
+function finaram_cf7_get_form_language_code($contact_form = null)
+{
+    if ($contact_form instanceof WPCF7_ContactForm) {
+        $form_id = (int) $contact_form->id();
+
+        if ($form_id && function_exists('apply_filters')) {
+            $lang = apply_filters('wpml_element_language_code', null, array(
+                'element_id'   => $form_id,
+                'element_type' => 'post_wpcf7_contact_form',
+            ));
+
+            if (is_string($lang) && $lang !== '') {
+                return $lang;
+            }
+        }
+    }
+
+    if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE) {
+        return ICL_LANGUAGE_CODE;
+    }
+
+    if (function_exists('apply_filters')) {
+        $default = apply_filters('wpml_default_language', null);
+        if (is_string($default) && $default !== '') {
+            return $default;
+        }
+    }
+
+    return 'default';
+}
+
+/**
+ * @param WPCF7_FormTag $tag
+ * @return bool
+ */
+function finaram_cf7_tag_uses_list_of_questions($tag)
+{
+    return in_array('list_of_questions', (array) $tag->get_option('data'), true);
+}
+
+/**
  * @return string[]
  */
-function finaram_get_cf7_list_of_questions()
+function finaram_cf7_get_registered_language_codes()
+{
+    $langs = array();
+
+    if (function_exists('apply_filters')) {
+        $active = apply_filters('wpml_active_languages', null, array('skip_missing' => 0));
+        if (is_array($active)) {
+            $langs = array_merge($langs, array_keys($active));
+        }
+
+        $default = apply_filters('wpml_default_language', null);
+        if (is_string($default) && $default !== '') {
+            $langs[] = $default;
+        }
+    }
+
+    if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE) {
+        $langs[] = ICL_LANGUAGE_CODE;
+    }
+
+    $langs[] = 'default';
+
+    return array_values(array_unique(array_filter($langs)));
+}
+
+/**
+ * "What would you like to ask?" options from ACF for a specific WPML language.
+ *
+ * @param string|null $lang WPML language code; null = current CF7 form language.
+ * @return string[]
+ */
+function finaram_get_cf7_list_of_questions($lang = null)
 {
     static $cache = array();
 
-    $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : 'default';
+    if ($lang === null) {
+        $contact_form = function_exists('wpcf7_get_current_contact_form')
+            ? wpcf7_get_current_contact_form()
+            : null;
+        $lang = finaram_cf7_get_form_language_code($contact_form);
+    }
+
     if (isset($cache[$lang])) {
         return $cache[$lang];
     }
 
     $acf_lang_filter = null;
-    if (defined('ICL_LANGUAGE_CODE')) {
-        $acf_lang_filter = static function () {
-            return ICL_LANGUAGE_CODE;
+    if ($lang && $lang !== 'default') {
+        $acf_lang_filter = static function () use ($lang) {
+            return $lang;
         };
         add_filter('acf/settings/current_language', $acf_lang_filter, 100);
     }
@@ -374,16 +455,35 @@ function finaram_get_cf7_list_of_questions()
 }
 
 /**
- * Allowed values for a dynamic CF7 select using data:list_of_questions.
+ * All translated question options (fallback when REST validation language is ambiguous).
  *
- * @param WPCF7_FormTag $tag
  * @return string[]
  */
-function finaram_cf7_get_select_accept_values($tag)
+function finaram_cf7_get_all_languages_list_of_questions()
 {
+    $questions = array();
+
+    foreach (finaram_cf7_get_registered_language_codes() as $lang) {
+        $questions = array_merge($questions, finaram_get_cf7_list_of_questions($lang));
+    }
+
+    return array_values(array_unique(array_filter($questions)));
+}
+
+/**
+ * Allowed values for a dynamic CF7 select using data:list_of_questions.
+ *
+ * @param WPCF7_FormTag          $tag
+ * @param WPCF7_ContactForm|null $contact_form
+ * @return string[]
+ */
+function finaram_cf7_get_select_accept_values($tag, $contact_form = null)
+{
+    $lang = finaram_cf7_get_form_language_code($contact_form);
+
     $values = array_merge(
         (array) $tag->values,
-        finaram_get_cf7_list_of_questions()
+        finaram_get_cf7_list_of_questions($lang)
     );
 
     if ($tag->has_option('first_as_label')) {
@@ -399,7 +499,13 @@ function finaram_cf7_get_select_accept_values($tag)
 
 add_filter('wpcf7_form_tag_data_option', function ($n, $options, $args) {
     if (in_array('list_of_questions', (array) $options, true)) {
-        return finaram_get_cf7_list_of_questions();
+        $contact_form = function_exists('wpcf7_get_current_contact_form')
+            ? wpcf7_get_current_contact_form()
+            : null;
+
+        return finaram_get_cf7_list_of_questions(
+            finaram_cf7_get_form_language_code($contact_form)
+        );
     }
     return $n;
 }, 10, 3);
@@ -412,7 +518,7 @@ add_action('wpcf7_swv_create_schema', function ($schema, $contact_form) {
     $dynamic_tags = array();
 
     foreach ($contact_form->scan_form_tags(array('basetype' => array('select'))) as $tag) {
-        if (in_array('list_of_questions', (array) $tag->get_option('data'), true)) {
+        if (finaram_cf7_tag_uses_list_of_questions($tag)) {
             $dynamic_tags[$tag->name] = $tag;
         }
     }
@@ -438,7 +544,12 @@ add_action('wpcf7_swv_create_schema', function ($schema, $contact_form) {
     }
 
     foreach ($dynamic_tags as $name => $tag) {
-        $accept = finaram_cf7_get_select_accept_values($tag);
+        $accept = finaram_cf7_get_select_accept_values($tag, $contact_form);
+
+        if (empty($accept)) {
+            $accept = finaram_cf7_get_all_languages_list_of_questions();
+        }
+
         if (empty($accept)) {
             continue;
         }
@@ -468,15 +579,23 @@ function finaram_cf7_clear_select_validation_if_allowed($result, $tag)
         return $result;
     }
 
+    if (! finaram_cf7_tag_uses_list_of_questions($tag)) {
+        return $result;
+    }
+
     if (! isset($_POST[$tag->name])) {
         return $result;
     }
 
+    $contact_form = function_exists('wpcf7_get_current_contact_form')
+        ? wpcf7_get_current_contact_form()
+        : null;
+
     $submitted = finaram_normalize_cf7_option(wp_unslash($_POST[$tag->name]));
-    $accept    = finaram_cf7_get_select_accept_values($tag);
+    $accept    = finaram_cf7_get_select_accept_values($tag, $contact_form);
 
     if (empty($accept)) {
-        $accept = finaram_get_cf7_list_of_questions();
+        $accept = finaram_cf7_get_all_languages_list_of_questions();
     }
 
     if ($submitted === '' || ! in_array($submitted, $accept, true)) {

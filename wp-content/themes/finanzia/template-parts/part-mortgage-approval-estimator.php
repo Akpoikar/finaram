@@ -9,6 +9,7 @@
  * @var array $args {
  *     @type string $title
  *     @type string $description
+ *     @type string $description_footer
  *     @type string $cta_text
  *     @type string $cta_url
  *     @type string $cta_class Extra classes for CTA (e.g. popup trigger hooks).
@@ -22,9 +23,10 @@ $args = wp_parse_args(
     finaram_mortgage_approval_estimator_defaults()
 );
 
-$title       = esc_html($args['title']);
-$description = esc_html($args['description']);
-$cta_text    = esc_html($args['cta_text']);
+$title              = esc_html($args['title']);
+$description        = esc_html($args['description']);
+$description_footer = esc_html($args['description_footer'] ?? '');
+$cta_text           = esc_html($args['cta_text']);
 $cta_url     = esc_url($args['cta_url']);
 $cta_class   = esc_attr($args['cta_class']);
 ?>
@@ -44,6 +46,9 @@ $cta_class   = esc_attr($args['cta_class']);
                     <?php endif; ?>
                     <?php if ($description) : ?>
                         <p class="mae__description"><?php echo $description; ?></p>
+                    <?php endif; ?>
+                    <?php if ($description_footer) : ?>
+                        <p class="mae__description-footer"><?php echo $description_footer; ?></p>
                     <?php endif; ?>
                 </header>
 

@@ -108,6 +108,14 @@
 }
 
 .mae__description {
+  margin: 0 0 8px;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--mae-text-muted);
+  max-width: 52ch;
+}
+
+.mae__description-footer {
   margin: 0 0 28px;
   font-size: 1.0625rem;
   line-height: 1.55;
@@ -116,7 +124,7 @@
 }
 
 @media (min-width: 1024px) {
-  .mae__description {
+  .mae__description-footer {
     margin-bottom: 40px;
   }
 }

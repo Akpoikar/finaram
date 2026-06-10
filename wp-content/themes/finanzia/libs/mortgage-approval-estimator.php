@@ -250,11 +250,15 @@ function finaram_mortgage_approval_estimator_defaults()
     return array(
         'title'       => finaram_mae_t(
             'How likely are you to get a mortgage?',
-            'Jaká je pravděpodobnost, že získáte hypotéku?'
+            'Jaká je vaše šance na získání hypotéky?'
         ),
         'description' => finaram_mae_t(
-            'Answer five quick questions and see your estimated approval probability. No signup required.',
-            'Odpovězte na pět rychlých otázek a zjistěte odhadovanou pravděpodobnost schválení. Bez registrace.'
+            'Answer five quick questions and see your estimated approval probability.',
+            'Odpovězte na pět krátkých otázek a zjistěte odhad pravděpodobnosti schválení hypotéky.'
+        ),
+        'description_footer' => finaram_mae_t(
+            'No signup required.',
+            'Bez registrace.'
         ),
         'cta_text'    => finaram_mae_t('Get Mortgage Consultation', 'Získat hypoteční konzultaci'),
         'cta_url'     => function_exists('finaram_get_consultation_url') && finaram_get_consultation_url()
