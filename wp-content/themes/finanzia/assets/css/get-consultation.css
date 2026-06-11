@@ -64,6 +64,15 @@
 
 .consult-page__form {
   width: 100%;
+  padding: 0;
+  background: transparent;
+  min-height: 0;
+  position: static;
+}
+
+.consult-page__form.popup__aside {
+  max-width: none;
+  flex-basis: auto;
 }
 
 .consult-page__cf7 .contacts__row + .contacts__row {
@@ -72,4 +81,121 @@
 
 .consult-page__cf7 .contacts__buttons {
   margin-top: 24px;
+}
+
+/*
+ * CF7 validation — only after the user clicks Send (not on load / field change).
+ * Applies to the konzultace page and the header consultation popup.
+ */
+.consult-page__cf7 .wpcf7 form:not(.finaram-cf7-submit-attempted) .wpcf7-not-valid-tip,
+.popup-consult .wpcf7 form:not(.finaram-cf7-submit-attempted) .wpcf7-not-valid-tip {
+  display: none !important;
+}
+
+.consult-page__cf7 .wpcf7 form:not(.finaram-cf7-submit-attempted) .wpcf7-not-valid,
+.popup-consult .wpcf7 form:not(.finaram-cf7-submit-attempted) .wpcf7-not-valid {
+  border-color: inherit !important;
+}
+
+.consult-page__cf7 .wpcf7-not-valid-tip,
+.popup-consult .wpcf7-not-valid-tip {
+  color: #ff8a7a;
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted .wpcf7-not-valid-tip,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted .wpcf7-not-valid-tip {
+  display: block;
+}
+
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted.invalid .wpcf7-response-output,
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted.unaccepted .wpcf7-response-output,
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted.failed .wpcf7-response-output,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted.invalid .wpcf7-response-output,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted.unaccepted .wpcf7-response-output,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted.failed .wpcf7-response-output {
+  display: block;
+  color: #ff8a7a;
+  border-color: #ff8a7a;
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted .wpcf7-not-valid,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted .wpcf7-not-valid {
+  border-color: #ff8a7a !important;
+}
+
+/*
+ * Mortgage / loan sub-type chips — same behaviour as header popup.
+ * Hidden until a matching question is selected (.active from JS).
+ */
+.consult-page__cf7 .contacts__add-mortgate,
+.consult-page__cf7 .contacts__add-loan {
+  display: none;
+  margin: 12px 0 0 -12px;
+  flex-wrap: wrap;
+}
+
+.consult-page__cf7 .contacts__add-mortgate.active,
+.consult-page__cf7 .contacts__add-loan.active {
+  display: flex;
+}
+
+.consult-page__cf7 .contacts__add-item {
+  margin: 12px 0 0 12px;
+  position: relative;
+}
+
+.consult-page__cf7 .contacts__add-item .wpcf7-list-item-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  padding: 0 24px;
+  background: #4f4f4f;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid #4f4f4f;
+  position: relative;
+  z-index: 1;
+}
+
+.consult-page__cf7 .contacts__add-item input {
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 0;
+}
+
+.consult-page__cf7 .contacts__add-item input:checked + .wpcf7-list-item-label {
+  border-color: #dd6b3a;
+}
+
+.consult-page__cf7 .wpcf7-list-item {
+  margin: 0;
+}
+
+.consult-page__cf7 .contacts__add-mortgate .wpcf7-not-valid-tip,
+.consult-page__cf7 .contacts__add-loan .wpcf7-not-valid-tip,
+.popup-consult .contacts__add-mortgate .wpcf7-not-valid-tip,
+.popup-consult .contacts__add-loan .wpcf7-not-valid-tip {
+  width: 100%;
+  flex: 0 0 100%;
+  color: #ff8a7a;
+  font-size: 14px;
+  margin: 8px 0 0 12px;
+}
+
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted .contacts__add-mortgate .wpcf7-not-valid-tip,
+.consult-page__cf7 .wpcf7 form.finaram-cf7-submit-attempted .contacts__add-loan .wpcf7-not-valid-tip,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted .contacts__add-mortgate .wpcf7-not-valid-tip,
+.popup-consult .wpcf7 form.finaram-cf7-submit-attempted .contacts__add-loan .wpcf7-not-valid-tip {
+  display: block;
 }

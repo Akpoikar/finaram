@@ -118,6 +118,7 @@
         <?= do_shortcode('[contact-form-7 id="3417" title="Zájem (Mortgage Simulator)" html_class="popup__form"]'); ?>
     </div>
 </div>
+<?php if (! function_exists('finaram_is_consultation_page') || ! finaram_is_consultation_page()) : ?>
 <div class="popup popup-consult">
     <div class="popup__overlay">
     </div>
@@ -130,6 +131,7 @@
         <?= do_shortcode('[contact-form-7 id="1782" title="Získat konzultaci" html_class="popup__aside-form"]'); ?>
     </div>
 </div>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 <script type="application/ld+json">

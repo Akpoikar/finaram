@@ -2,7 +2,7 @@
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.1.45');
+    define('_S_VERSION', '1.1.54');
 }
 
 require_once __DIR__ . '/libs/theme.php';
@@ -341,6 +341,23 @@ function finaram_cf7_get_form_language_code($contact_form = null)
                 return $lang;
             }
         }
+
+        if (method_exists($contact_form, 'locale')) {
+            $locale = $contact_form->locale();
+            if (is_string($locale) && strlen($locale) >= 2) {
+                return strtolower(substr($locale, 0, 2));
+            }
+        }
+    }
+
+    if (function_exists('wp_get_referer')) {
+        $referer = wp_get_referer();
+        if ($referer && function_exists('apply_filters')) {
+            $lang = apply_filters('wpml_url_to_language', null, $referer);
+            if (is_string($lang) && $lang !== '') {
+                return $lang;
+            }
+        }
     }
 
     if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE) {
@@ -364,6 +381,66 @@ function finaram_cf7_get_form_language_code($contact_form = null)
 function finaram_cf7_tag_uses_list_of_questions($tag)
 {
     return in_array('list_of_questions', (array) $tag->get_option('data'), true);
+}
+
+/**
+ * @param string   $value
+ * @param string[] $options
+ * @return bool
+ */
+function finaram_cf7_value_in_options($value, array $options)
+{
+    $value = finaram_normalize_cf7_option($value);
+    if ($value === '') {
+        return false;
+    }
+
+    foreach ($options as $option) {
+        if (finaram_normalize_cf7_option($option) === $value) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @param WPCF7_Validation $result
+ * @param string           $field_name
+ * @return WPCF7_Validation
+ */
+function finaram_cf7_validation_clear_field($result, $field_name)
+{
+    $reflection = new ReflectionClass($result);
+    $property   = $reflection->getProperty('invalid_fields');
+    $property->setAccessible(true);
+    $invalid    = $property->getValue($result);
+    unset($invalid[$field_name]);
+    $property->setValue($result, $invalid);
+
+    return $result;
+}
+
+/**
+ * Select fields on the consultation form that use ACF-driven question options.
+ *
+ * @param WPCF7_FormTag          $tag
+ * @param WPCF7_ContactForm|null $contact_form
+ * @return bool
+ */
+function finaram_cf7_is_dynamic_question_select($tag, $contact_form = null)
+{
+    if ($tag->basetype !== 'select' || empty($tag->name)) {
+        return false;
+    }
+
+    if (finaram_cf7_tag_uses_list_of_questions($tag)) {
+        return true;
+    }
+
+    return function_exists('finaram_cf7_is_consultation_form')
+        && $contact_form instanceof WPCF7_ContactForm
+        && finaram_cf7_is_consultation_form($contact_form);
 }
 
 /**
@@ -511,6 +588,27 @@ add_filter('wpcf7_form_tag_data_option', function ($n, $options, $args) {
 }, 10, 3);
 
 /**
+ * Ensure the consultation question dropdown keeps class:credit-type for JS toggles.
+ *
+ * @param WPCF7_FormTag $tag
+ * @return WPCF7_FormTag
+ */
+add_filter('wpcf7_form_tag', function ($tag) {
+    if ($tag->basetype !== 'select' || ! finaram_cf7_tag_uses_list_of_questions($tag)) {
+        return $tag;
+    }
+
+    $classes = $tag->get_class_option('');
+    if (is_string($classes) && in_array('credit-type', explode(' ', $classes), true)) {
+        return $tag;
+    }
+
+    $tag->options[] = 'class:credit-type';
+
+    return $tag;
+}, 20, 1);
+
+/**
  * CF7 enum validation can miss ACF-driven options (WPML / dynamic data).
  * Replace enum rules for list_of_questions selects with the live option list.
  */
@@ -518,7 +616,7 @@ add_action('wpcf7_swv_create_schema', function ($schema, $contact_form) {
     $dynamic_tags = array();
 
     foreach ($contact_form->scan_form_tags(array('basetype' => array('select'))) as $tag) {
-        if (finaram_cf7_tag_uses_list_of_questions($tag)) {
+        if (finaram_cf7_is_dynamic_question_select($tag, $contact_form)) {
             $dynamic_tags[$tag->name] = $tag;
         }
     }
@@ -543,26 +641,7 @@ add_action('wpcf7_swv_create_schema', function ($schema, $contact_form) {
         $filtered_rules[] = $rule;
     }
 
-    foreach ($dynamic_tags as $name => $tag) {
-        $accept = finaram_cf7_get_select_accept_values($tag, $contact_form);
-
-        if (empty($accept)) {
-            $accept = finaram_cf7_get_all_languages_list_of_questions();
-        }
-
-        if (empty($accept)) {
-            continue;
-        }
-
-        $filtered_rules[] = wpcf7_swv_create_rule('enum', array(
-            'field'  => $name,
-            'accept' => $accept,
-            'error'  => $contact_form->filter_message(
-                __('Undefined value was submitted through this field.', 'contact-form-7')
-            ),
-        ));
-    }
-
+    // Dynamic ACF selects: required validation only — enum breaks across WPML/REST.
     $rules_prop->setValue($schema, $filtered_rules);
 }, 25, 2);
 
@@ -579,17 +658,17 @@ function finaram_cf7_clear_select_validation_if_allowed($result, $tag)
         return $result;
     }
 
-    if (! finaram_cf7_tag_uses_list_of_questions($tag)) {
+    $contact_form = function_exists('wpcf7_get_current_contact_form')
+        ? wpcf7_get_current_contact_form()
+        : null;
+
+    if (! finaram_cf7_is_dynamic_question_select($tag, $contact_form)) {
         return $result;
     }
 
     if (! isset($_POST[$tag->name])) {
         return $result;
     }
-
-    $contact_form = function_exists('wpcf7_get_current_contact_form')
-        ? wpcf7_get_current_contact_form()
-        : null;
 
     $submitted = finaram_normalize_cf7_option(wp_unslash($_POST[$tag->name]));
     $accept    = finaram_cf7_get_select_accept_values($tag, $contact_form);
@@ -598,21 +677,55 @@ function finaram_cf7_clear_select_validation_if_allowed($result, $tag)
         $accept = finaram_cf7_get_all_languages_list_of_questions();
     }
 
-    if ($submitted === '' || ! in_array($submitted, $accept, true)) {
+    if (! finaram_cf7_value_in_options($submitted, $accept)) {
         return $result;
     }
 
-    $reflection = new ReflectionClass($result);
-    $property   = $reflection->getProperty('invalid_fields');
-    $property->setAccessible(true);
-    $invalid    = $property->getValue($result);
-    unset($invalid[$tag->name]);
-    $property->setValue($result, $invalid);
-
-    return $result;
+    return finaram_cf7_validation_clear_field($result, $tag->name);
 }
 add_filter('wpcf7_validate_select', 'finaram_cf7_clear_select_validation_if_allowed', 30, 2);
 add_filter('wpcf7_validate_select*', 'finaram_cf7_clear_select_validation_if_allowed', 30, 2);
+
+/**
+ * Final pass: clear false positives on consultation question selects.
+ *
+ * @param WPCF7_Validation $result
+ * @param WPCF7_FormTag[]  $tags
+ * @return WPCF7_Validation
+ */
+function finaram_cf7_validate_clear_question_errors($result, $tags)
+{
+    $contact_form = function_exists('wpcf7_get_current_contact_form')
+        ? wpcf7_get_current_contact_form()
+        : null;
+
+    if (! $contact_form instanceof WPCF7_ContactForm) {
+        return $result;
+    }
+
+    $allowed = finaram_cf7_get_all_languages_list_of_questions();
+    if (empty($allowed)) {
+        return $result;
+    }
+
+    foreach ($tags as $tag) {
+        if (! finaram_cf7_is_dynamic_question_select($tag, $contact_form)) {
+            continue;
+        }
+
+        if ($result->is_valid($tag->name) || ! isset($_POST[$tag->name])) {
+            continue;
+        }
+
+        $submitted = finaram_normalize_cf7_option(wp_unslash($_POST[$tag->name]));
+        if (finaram_cf7_value_in_options($submitted, $allowed)) {
+            $result = finaram_cf7_validation_clear_field($result, $tag->name);
+        }
+    }
+
+    return $result;
+}
+add_filter('wpcf7_validate', 'finaram_cf7_validate_clear_question_errors', 99, 2);
 
 add_filter('wpcf7_form_hidden_fields', 'cf7_add_extras');
 
